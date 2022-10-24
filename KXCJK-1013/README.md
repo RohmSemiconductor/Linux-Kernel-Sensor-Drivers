@@ -7,4 +7,4 @@ The driver for KXCJK-1013 accelerometer sensors has originally been created and 
 Please see the maintenance information from the linux
 [MAINTAINERS](https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/MAINTAINERS) file. You can read the MAINTAINERS manually or use the [get_maintainer.pl](https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/scripts/get_maintainer.pl)
 
-Driver can be found from the [upstream Linux kernel](www.kernel.org) at drivers/iio/accel/kxcjk-1013.c
+Driver can be found from the [upstream Linux kernel](https://www.kernel.org) at drivers/iio/accel/kxcjk-1013.c
