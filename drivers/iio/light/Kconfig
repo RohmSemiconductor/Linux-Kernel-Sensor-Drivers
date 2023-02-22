@@ -183,6 +183,9 @@ config IIO_CROS_EC_LIGHT_PROX
 	  To compile this driver as a module, choose M here:
 	  the module will be called cros_ec_light_prox.
 
+config IIO_GTS_HELPER
+	tristate
+
 config GP2AP002
 	tristate "Sharp GP2AP002 Proximity/ALS sensor"
 	depends on I2C
