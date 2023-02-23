@@ -35,7 +35,10 @@ reference implementation only, without warranty, and they may not be actively
 developed/maintained.
 
 ### Upstream status
-* KX022A accelerometer. Under development - [KX022A](https://github.com/RohmSemiconductor/Linux-Kernel-sensor-Drivers/tree/master/KX022A)
+* BU27008 RGBC. Under development - [BU27008](https://github.com/RohmSemiconductor/Linux-Kernel-Sensor-Drivers/tree/master/BU27008)
+* BU27010 RGBC/IR + Flicker. Under development - [BU27010](https://github.com/RohmSemiconductor/Linux-Kernel-Sensor-Drivers/tree/master/BU27010)
+* BU27034 Ambient Light Sensori. Under development - [BU27034](https://github.com/RohmSemiconductor/Linux-Kernel-Sensor-Drivers/tree/master/BU27034)
+* KX022A accelerometer. Fully upstream - [KX022A](https://github.com/RohmSemiconductor/Linux-Kernel-sensor-Drivers/tree/master/KX022A)
 * RPR0521 ambient light/proximity. Fully upstream - [RPR0521](https://github.com/RohmSemiconductor/Linux-Kernel-sensor-Drivers/tree/master/RPR0521)
 
 ### Upstreamed by others
