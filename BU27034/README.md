@@ -11,4 +11,4 @@ Additionally the measurement time can be adjusted.
 
 ## Linux
 
-The ROHM Finland SWDC is creating an IIO driver in collaboration with the Linux kernel community. Driver is currently being reviewed by the kernel community. Patch series v6 can be found from [lore.kernel.org](https://lore.kernel.org/all/cover.1679915278.git.mazziesaccount@gmail.com/).  Please note that this is likely not the final version and will not be maintained. Stay tuned for the information updates regarding the driver upstreaming process for availability of community supported driver.
+The ROHM Finland SWDC is creating an IIO driver in collaboration with the Linux kernel community. Early driver version is merged to the upstream [IIO repository](https://git.kernel.org/pub/scm/linux/kernel/git/jic23/iio.git/log/?h=togreg) 'togreg' branch for testing and integration.
