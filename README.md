@@ -12,7 +12,7 @@ drivers are upstreamed the code changes are no longer in our hands - and the
 best experts for those drivers can be found from the commnity. This does not
 mean ROHM is out of the game - we have our personnel in Linux driver reviewers/
 maintainers - but we don't "own" these components or frameworks anymore. You
-get the best possible contacts via the MAINTAINERS file.
+get the best possible contacts via the [MAINTAINERS](https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/MAINTAINERS) file and [get_maintainer.pl](https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/scripts/get_maintainer.pl) script.
 
 ## Contents of this repository
 We do also occasionally develop something which does not perfectly fit into
@@ -42,6 +42,7 @@ developed/maintained.
 * RPR0521 ambient light/proximity. Fully upstream - [RPR0521](https://github.com/RohmSemiconductor/Linux-Kernel-sensor-Drivers/tree/master/RPR0521)
 
 ### Upstreamed by others
+* KX132-1211 - [upstreaming ongoing](https://lore.kernel.org/lkml/cover.1682019544.git.mehdi.djait.k@gmail.com/)
 * KXCJK-1013 Accelerometer - [KXCJK-1013](https://github.com/RohmSemiconductor/Linux-Kernel-sensor-Drivers/tree/master/KXCJK-1013)
 * KXSD9 Accelerometer - [KXSD9](https://github.com/RohmSemiconductor/Linux-Kernel-sensor-Drivers/tree/master/KXSD9)
 * BH1710 Ambient light sensor - [BH1710](https://github.com/RohmSemiconductor/Linux-Kernel-sensor-Drivers/tree/master/BH17XX)
