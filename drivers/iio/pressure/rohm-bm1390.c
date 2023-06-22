@@ -173,8 +173,15 @@ static const struct iio_chan_spec bm1390_channels[] = {
 	{
 		.type = IIO_PRESSURE,
 		.info_mask_separate = BIT(IIO_CHAN_INFO_RAW),
-		.info_mask_shared_by_type = BIT(IIO_CHAN_INFO_SCALE) |
-					    BIT(IIO_CHAN_INFO_OVERSAMPLING_RATIO),
+		/*
+		 * When IIR is used, we must fix amount of averaged samples.
+		 * Thus we don't allow setting oversampling ratio.
+		 */
+		.info_mask_shared_by_type = BIT(IIO_CHAN_INFO_SCALE)
+#ifdef OVERSAMPLING
+					| BIT(IIO_CHAN_INFO_OVERSAMPLING_RATIO)
+#endif
+		,
 		.scan_index = BM1390_CHAN_PRESSURE,
 		.scan_type = {
 			.sign = 'u',
@@ -312,6 +319,7 @@ unlock_out:
 	return ret;
 }
 
+#ifdef OVERSAMPLING
 struct bm1390_oversampling {
 	int ratio;
 	int reg;
@@ -349,6 +357,8 @@ static int bm1390_get_oversampling_ratio(struct bm1390_data *data, int *ratio)
 
 	return -EINVAL;
 }
+
+#endif
 
 static int bm1390_read_raw(struct iio_dev *idev,
 			   struct iio_chan_spec const *chan,
@@ -391,8 +401,10 @@ static int bm1390_read_raw(struct iio_dev *idev,
 
 		return ret;
 
+#ifdef OVERSAMPLING
 	case IIO_CHAN_INFO_OVERSAMPLING_RATIO:
 		return bm1390_get_oversampling_ratio(data, val);
+#endif
 
 	default:
 		return -EINVAL;
@@ -509,6 +521,7 @@ static int bm1390_fifo_flush(struct iio_dev *idev, unsigned int samples)
 	return ret;
 }
 
+#ifdef OVERSAMPLING
 static int bm1390_set_oversampling_ratio(struct bm1390_data *data, int ratio)
 {
 	int i, val, ret;
@@ -529,12 +542,15 @@ static int bm1390_set_oversampling_ratio(struct bm1390_data *data, int ratio)
 
 	return ret;
 }
+#endif
 
 static int bm1390_write_raw(struct iio_dev *idev,
 			    struct iio_chan_spec const *chan,
 			    int val, int val2, long mask)
 {
+#ifdef OVERSAMPLING
 	struct bm1390_data *data = iio_priv(idev);
+#endif
 	int ret;
 
 	ret = iio_device_claim_direct_mode(idev);
@@ -542,10 +558,12 @@ static int bm1390_write_raw(struct iio_dev *idev,
 		return ret;
 
 	switch (mask) {
+#ifdef OVERSAMPLING
 	case IIO_CHAN_INFO_OVERSAMPLING_RATIO:
 		if (val2)
 			return -EINVAL;
 		return bm1390_set_oversampling_ratio(data, val);
+#endif
 	default:
 		ret = -EINVAL;
 	}
@@ -554,6 +572,7 @@ static int bm1390_write_raw(struct iio_dev *idev,
 	return ret;
 }
 
+#ifdef OVERSAMPLING
 static int bm1390_read_avail(struct iio_dev *indio_dev,
 			     struct iio_chan_spec const *chan,
 			     const int **vals, int *type, int *length,
@@ -569,6 +588,7 @@ static int bm1390_read_avail(struct iio_dev *indio_dev,
 		return -EINVAL;
 	}
 }
+#endif
 
 static int bm1390_set_watermark(struct iio_dev *idev, unsigned int val)
 {
@@ -587,7 +607,9 @@ static int bm1390_set_watermark(struct iio_dev *idev, unsigned int val)
 static const struct iio_info bm1390_info = {
 	.read_raw = &bm1390_read_raw,
 	.write_raw = &bm1390_write_raw,
+#ifdef OVERSAMPLING
 	.read_avail = &bm1390_read_avail,
+#endif
 
 	.validate_trigger = iio_validate_own_trigger,
 	.hwfifo_set_watermark = bm1390_set_watermark,
