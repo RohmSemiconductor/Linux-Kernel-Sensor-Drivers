@@ -2,6 +2,10 @@
 /*
  * BM1390 ROHM pressure sensor
  *
+ * Please note, this driver is in alpha stage. The trigger and buffer work is
+ * not completed and is thus disabled. The driver will be further developed
+ * and plan is to submit it in upstream Linux kernel when work is finished.
+ *
  * Copyright (c) 2023, ROHM Semiconductor.
  * https://fscdn.rohm.com/en/products/databook/datasheet/ic/sensor/pressure/bm1390glv-z-e.pdf
  */
