@@ -131,6 +131,7 @@ static const struct regmap_config bm1390_regmap = {
 	.precious_table = &bm1390_precious_regs,
 	.max_register = BM1390_MAX_REGISTER,
 	.cache_type = REGCACHE_RBTREE,
+	.disable_locking = true,
 };
 
 enum {
@@ -206,6 +207,7 @@ static const struct iio_chan_spec bm1390_channels[] = {
 			.endianness = IIO_BE,
 		},
 	},
+	IIO_CHAN_SOFT_TIMESTAMP(2),
 };
 
 static const unsigned long bm1390_scan_masks[] = {
@@ -439,12 +441,12 @@ static int __bm1390_fifo_flush(struct iio_dev *idev, unsigned int samples,
 		ret = regmap_bulk_read(data->regmap, BM1390_REG_TEMP_HI, &temp,
 				       sizeof(temp));
 		if (ret)
-			goto unlock_out;
+			return ret;
 	}
 
 	ret = regmap_read(data->regmap, BM1390_REG_FIFO_LVL, &smp_lvl);
 	if (ret)
-		goto unlock_out;
+		return ret;
 
 	smp_lvl = FIELD_GET(BM1390_MASK_FIFO_LVL, smp_lvl);
 
@@ -458,7 +460,7 @@ static int __bm1390_fifo_flush(struct iio_dev *idev, unsigned int samples,
 	}
 
 	if (!smp_lvl)
-		goto unlock_out;
+		return ret;
 
 	sample_period = data->timestamp - data->old_timestamp;
 	do_div(sample_period, smp_lvl);
@@ -490,11 +492,9 @@ static int __bm1390_fifo_flush(struct iio_dev *idev, unsigned int samples,
 	regmap_read(data->regmap, BM1390_REG_FIFO_LVL, &smp_lvl);
 
 	if (!ret)
-		ret = smp_lvl;
+		return ret;
 
-unlock_out:
-
-	return ret;
+	return smp_lvl;
 }
 
 static int bm1390_fifo_flush(struct iio_dev *idev, unsigned int samples)
@@ -657,7 +657,7 @@ static int bm1390_chip_init(struct bm1390_data *data)
 
 	/*
 	 * Default to use IIR filter in "middle" mode. Also the AVE_NUM must
-	 * be fixed when IIR us in use
+	 * be fixed when IIR is in use
 	 */
 	ret = regmap_update_bits(data->regmap, BM1390_REG_MODE_CTRL,
 				 BM1390_MASK_AVE_NUM, BM1390_IIR_AVE_NUM);
@@ -774,17 +774,26 @@ static irqreturn_t bm1390_trigger_handler(int irq, void *p)
 	struct iio_poll_func *pf = p;
 	struct iio_dev *idev = pf->indio_dev;
 	struct bm1390_data *data = iio_priv(idev);
-	int ret;
+	int ret, dummy;
+
+	/* DRDY is acked by reading status reg */
+	ret = regmap_read(data->regmap, BM1390_REG_STATUS,
+			  &dummy);
+	if (ret || !dummy)
+		return IRQ_NONE;
+
+	dev_dbg(data->dev, "DRDY trig status 0x%x\n", dummy);
 
 	ret = bm1390_pressure_read(data, &data->buf.pressure);
-	if (ret)
-		goto err_read;
+	if (ret) {
+		dev_warn(data->dev, "sample read failed %d\n", ret);
+		return IRQ_NONE;
+	}
 
 	ret = regmap_bulk_read(data->regmap, BM1390_REG_TEMP_HI,
 			       &data->buf.temp, BM1390_TEMP_SIZE);
 
 	iio_push_to_buffers_with_timestamp(idev, &data->buf, data->timestamp);
-err_read:
 	iio_trigger_notify_done(idev->trig);
 
 	return IRQ_HANDLED;
@@ -954,7 +963,6 @@ static int bm1390_probe(struct i2c_client *i2c)
 	struct device *dev;
 	unsigned int part_id;
 	int ret;
-	bool remove_me_i_am_a_hack_to_not_execute_incomplete_trigger_feature = true;
 
 	dev = &i2c->dev;
 
@@ -979,8 +987,6 @@ static int bm1390_probe(struct i2c_client *i2c)
 
 	if (part_id != BM1390_ID)
 		dev_warn(dev, "unknown device 0x%x\n", part_id);
-	else
-		remove_me_i_am_a_hack_to_not_execute_incomplete_trigger_feature = false;
 
 	data->regmap = regmap;
 	data->dev = dev;
@@ -1001,18 +1007,15 @@ static int bm1390_probe(struct i2c_client *i2c)
 	idev->num_channels = ARRAY_SIZE(bm1390_channels);
 	idev->name = "bm1390";
 	idev->info = &bm1390_info;
-	idev->modes = INDIO_DIRECT_MODE /* | INDIO_BUFFER_SOFTWARE */;
+	idev->modes = INDIO_DIRECT_MODE | INDIO_BUFFER_SOFTWARE;
 
 	ret = bm1390_chip_init(data);
 	if (ret)
 		return dev_err_probe(dev, ret, "sensor init failed\n");
 
-	if (remove_me_i_am_a_hack_to_not_execute_incomplete_trigger_feature) {
-		dev_warn(data->dev, "registering trigger - feature not completed\n");
-		ret = bm1390_setup_trigger(data, idev, i2c->irq);
-		if (ret)
-			return ret;
-	}
+	ret = bm1390_setup_trigger(data, idev, i2c->irq);
+	if (ret)
+		return ret;
 
 	ret = devm_iio_device_register(dev, idev);
 	if (ret < 0)
