@@ -373,25 +373,29 @@ static int bm1390_read_raw(struct iio_dev *idev,
 
 	switch (mask) {
 	case IIO_CHAN_INFO_SCALE:
-		*val = 0;
-		if (chan->type == IIO_TEMP)
-			*val2 = 31250;
-		else if (chan->type == IIO_PRESSURE)
+		if (chan->type == IIO_TEMP) {
+			*val = 31;
+			*val2 = 250000;
+
+			return IIO_VAL_INT_PLUS_MICRO;
+		} else if (chan->type == IIO_PRESSURE) {
+			*val = 0;
 			/*
  			 * pressure in hPa is register value divided by 2048.
  			 * This means kPa is 1/20480 times the register value,
- 			 * which equals to 48.828125 * 10 ^ -6
- 			 * 0.000048828125. This is 48828 nano kPa.
+ 			 * which equals to 48828.125 * 10 ^ -9
+ 			 * This is 48828.125 nano kPa.
  			 *
  			 * When we scale this using IIO_VAL_INT_PLUS_NANO we
  			 * get 48828 - which means we lose some accuracy. Well,
  			 * let's try to live with that.
  			 */
 			*val2 = 48828;
-		else
-			return -EINVAL;
 
-		return IIO_VAL_INT_PLUS_NANO;
+			return IIO_VAL_INT_PLUS_NANO;
+		}
+
+		return -EINVAL;
 	case IIO_CHAN_INFO_RAW:
 
 		ret = iio_device_claim_direct_mode(idev);
