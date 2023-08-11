@@ -9,5 +9,7 @@ and tablet PCs.
 
 ## Linux
 
-The ROHM Finland SWDC is creating an IIO driver. Expected to be released during
-2023.
+The ROHM Finland SWDC is creating an IIO driver in collaboration with the
+upstream Linux kernel community. Driver is merged for testing in
+[upstream IIO development tree](https://git.kernel.org/pub/scm/linux/kernel/git/jic23/iio.git/)
+and is expected to be released in Linux v.6.6
