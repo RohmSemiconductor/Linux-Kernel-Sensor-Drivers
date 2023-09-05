@@ -32,6 +32,7 @@ static int kx022a_i2c_probe(struct i2c_client *i2c)
 
 static const struct of_device_id kx022a_of_match[] = {
 	{ .compatible = "kionix,kx022a", },
+	{ .compatible = "kionix,kx132acr-lbz", },
 	{ }
 };
 MODULE_DEVICE_TABLE(of, kx022a_of_match);

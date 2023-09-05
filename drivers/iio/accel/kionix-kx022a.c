@@ -27,6 +27,13 @@
 #include "kionix-kx022a.h"
 
 /*
+ * The KX132ACR-LBZ is industrial grade accelerometer. It's register interface
+ * is identical to KX022A except that it does not contain tilt / double tap /
+ * freefall engines.
+ */
+#define KX132ACR_LBZ_ID 0xd8
+
+/*
  * The KX022A has FIFO which can store 43 samples of HiRes data from 2
  * channels. This equals to 43 (samples) * 3 (channels) * 2 (bytes/sample) to
  * 258 bytes of sample data. The quirk to know is that the amount of bytes in
@@ -1026,7 +1033,7 @@ int kx022a_probe_internal(struct device *dev)
 	if (ret)
 		return dev_err_probe(dev, ret, "Failed to access sensor\n");
 
-	if (chip_id != KX022A_ID) {
+	if (chip_id != KX022A_ID && chip_id != KX132ACR_LBZ_ID) {
 		dev_err(dev, "unsupported device 0x%x\n", chip_id);
 		return -EINVAL;
 	}

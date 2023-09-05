@@ -38,6 +38,7 @@ MODULE_DEVICE_TABLE(spi, kx022a_id);
 
 static const struct of_device_id kx022a_of_match[] = {
 	{ .compatible = "kionix,kx022a", },
+	{ .compatible = "kionix,kx132acr-lbz", },
 	{ }
 };
 MODULE_DEVICE_TABLE(of, kx022a_of_match);
