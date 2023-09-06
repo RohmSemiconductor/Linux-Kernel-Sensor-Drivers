@@ -8,7 +8,5 @@ LCD backlight of TVs, mobile phones and tablet PCs.
 
 ## Linux
 
-The ROHM Finland SWDC is creating an IIO driver in collaboration with the
-upstream Linux kernel community. Driver is merged in
-[upstream Linux development tree](https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/)
-at v6.5-rc1 development tag and is expected to be released in Linux v.6.5.
+The ROHM Finland SWDC has created an IIO driver in collaboration with the
+Linux kernel community. Driver is merged to the [upstream](https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git) Linux v6.5.
