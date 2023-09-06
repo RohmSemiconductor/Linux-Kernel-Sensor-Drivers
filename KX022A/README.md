@@ -1,4 +1,4 @@
-# ROHM/Kionix 3-Axis Accelerometer IC KX112
+# ROHM/Kionix 3-Axis Accelerometer IC KX022A
 
 KX022A is a 3-axis accelerometer from ROHM/Kionix. The sensor features include variable ODRs, I2C and SPI control, FIFO/LIFO with watermark IRQ, tap/motion detection, wake-up & back-to-sleep events, four acceleration ranges (2, 4, 8 and 16g), etc.
 
