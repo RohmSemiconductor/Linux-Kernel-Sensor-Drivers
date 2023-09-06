@@ -35,15 +35,16 @@ reference implementation only, without warranty, and they may not be actively
 developed/maintained.
 
 ### Upstream status
-* BU27008 RGBC. Being merged - [BU27008](https://github.com/RohmSemiconductor/Linux-Kernel-Sensor-Drivers/tree/master/BU27008)
+* BU27008 RGBC. Fully upstream - [BU27008](https://github.com/RohmSemiconductor/Linux-Kernel-Sensor-Drivers/tree/master/BU27008)
 * BU27010 RGBC/IR + Flicker. Being merged - [BU27010](https://github.com/RohmSemiconductor/Linux-Kernel-Sensor-Drivers/tree/master/BU27010)
 * BU27034 Ambient Light Sensor. Fully upstream - [BU27034](https://github.com/RohmSemiconductor/Linux-Kernel-Sensor-Drivers/tree/master/BU27034)
 * KX022A accelerometer. Fully upstream - [KX022A](https://github.com/RohmSemiconductor/Linux-Kernel-sensor-Drivers/tree/master/KX022A)
+* KX132ACR-LBZ accelerometer. Upstreaming pending - [KX132ACR-LBZ](https://github.com/RohmSemiconductor/Linux-Kernel-sensor-Drivers/tree/master/KX132ACR-LBZ)
 * RPR0521 ambient light/proximity. Fully upstream - [RPR0521](https://github.com/RohmSemiconductor/Linux-Kernel-sensor-Drivers/tree/master/RPR0521)
 * BM1390 pressure senosr. Under development - [BM1390](https://github.com/RohmSemiconductor/Linux-Kernel-sensor-Drivers/tree/master/BM1390)
 
 ### Upstreamed by others
-* KX132-1211 - [upstreaming ongoing](https://lore.kernel.org/lkml/cover.1682019544.git.mehdi.djait.k@gmail.com/)
+* KX132-1211 accelerometer. Upstreaming ongoing - [KX132-1211](https://github.com/RohmSemiconductor/Linux-Kernel-sensor-Drivers/tree/master/KX132-1211)
 * KXCJK-1013 Accelerometer - [KXCJK-1013](https://github.com/RohmSemiconductor/Linux-Kernel-sensor-Drivers/tree/master/KXCJK-1013)
 * KXSD9 Accelerometer - [KXSD9](https://github.com/RohmSemiconductor/Linux-Kernel-sensor-Drivers/tree/master/KXSD9)
 * BH1710 Ambient light sensor - [BH1710](https://github.com/RohmSemiconductor/Linux-Kernel-sensor-Drivers/tree/master/BH17XX)
