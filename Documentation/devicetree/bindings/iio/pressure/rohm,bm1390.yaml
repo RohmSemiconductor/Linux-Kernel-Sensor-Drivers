@@ -9,10 +9,10 @@ title: ROHM BM1390 pressure sensor
 maintainers:
   - Matti Vaittinen <mazziesaccount@gmail.com>
 
-description: |
+description:
   BM1390GLV-Z is a pressure sensor which performs internal temperature
   compensation for the MEMS. Pressure range is from 300 hPa to 1300 hPa
-  and sample averaging and IIR filtering is built in sensor. Temperature
+  and sample averaging and IIR filtering is built in. Temperature
   measurement is also supported.
 
 properties:
@@ -41,7 +41,7 @@ examples:
         #address-cells = <1>;
         #size-cells = <0>;
         pressure-sensor@5d {
-            compatible = "kionix,kx022a";
+            compatible = "rohm,bm1390glv-z";
             reg = <0x5d>;
 
             interrupt-parent = <&gpio1>;
