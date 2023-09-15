@@ -11,5 +11,5 @@ and tablet PCs.
 
 The ROHM Finland SWDC is creating an IIO driver in collaboration with the
 upstream Linux kernel community. Driver is merged for testing in
-[upstream IIO development tree](https://git.kernel.org/pub/scm/linux/kernel/git/jic23/iio.git/)
-and is expected to be released in Linux v.6.6
+[upstream Linux tree](https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/drivers/iio/light/rohm-bu27008.c). First tag containing the driver is v6.6-rc1.
+Driver is expected to be officially released in Linux v.6.6
