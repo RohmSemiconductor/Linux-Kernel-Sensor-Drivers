@@ -11,5 +11,4 @@ configured to be "weak", "middle" or "strong" filtering.
 
 ## Linux
 
-Driver for Linux is under development. Early development draft version
-can be found [here](https://github.com/RohmSemiconductor/Linux-Kernel-Sensor-Drivers/releases/tag/bm1390-beta-v0.01).
+The ROHM Finland SWDC is developing a Linux IIO driver in collaboration with the Linux kernel community. Please see [patch v2](https://lore.kernel.org/all/cover.1694760170.git.mazziesaccount@gmail.com/) for an early version.
