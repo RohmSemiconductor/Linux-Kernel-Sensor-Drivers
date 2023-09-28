@@ -71,7 +71,7 @@ which may be small or big and aren't always directly relaed to our products.
 This helps us all.
 
 ### Help!
-Revceived a .patch file? What should I do with this?
+#### Revceived a .patch file? What should I do with this?
 
 A patch file is describing changes. Typoically used to deliver fixes or new code features as a set of changes that should be applied to some known 'base' release of the code. In case of our driver patch this is usually some Linux release which can be found from cover-letter patch (line like base-commit: 5e99f692d4e32e3250ab18d511894ca797407aec at the bottom), or can be said in email/website/whatever you found the patch from. Most usual way of applying the patch in a Linux is to use 'git' tool. Often the work-flow goes like:
 1. Clone the upstream Linux kernel repository (or, if you work with git and linux, add the upstream repository as a remote for your work repository).
@@ -80,6 +80,6 @@ A patch file is describing changes. Typoically used to deliver fixes or new code
 
 After this you can use the usual git functionality to view the changes, merge them to other branches, diff them, review why some lines were changed and by whom etc.
 
-I added the source but it does not seem to build?
+#### I added the source but it does not seem to build?
 
 The Linux kernel supports huge set of features. In order to keep the binary size sane, not all of the features are enabled at the same time. Also, some features can be mutually exclusive. Selecting what to build is done by the config system. You can add/remove features to build using tools like menuconfig to enable/disable features. It is possible your newly added code is not enabled to be compiled. Usually you can easily track if your file is compiled by opening the Makefile in folder where your code file is, and finding the respective config name from this file. Then you can search for the config using '/' in menuconfig tool. Please note that some configs have dependencies which need to also be enabled before the specific feature can be enabled.
