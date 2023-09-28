@@ -39,12 +39,12 @@ developed/maintained.
 * BU27010 RGBC/IR + Flicker. Being merged - [BU27010](https://github.com/RohmSemiconductor/Linux-Kernel-Sensor-Drivers/tree/master/BU27010)
 * BU27034 Ambient Light Sensor. Fully upstream - [BU27034](https://github.com/RohmSemiconductor/Linux-Kernel-Sensor-Drivers/tree/master/BU27034)
 * KX022A accelerometer. Fully upstream - [KX022A](https://github.com/RohmSemiconductor/Linux-Kernel-sensor-Drivers/tree/master/KX022A)
-* KX132ACR-LBZ accelerometer. Upstreaming pending - [KX132ACR-LBZ](https://github.com/RohmSemiconductor/Linux-Kernel-sensor-Drivers/tree/master/KX132ACR-LBZ)
+* KX132ACR-LBZ accelerometer. Upstreaming ongoing - [KX132ACR-LBZ](https://github.com/RohmSemiconductor/Linux-Kernel-sensor-Drivers/tree/master/KX132ACR-LBZ)
 * RPR0521 ambient light/proximity. Fully upstream - [RPR0521](https://github.com/RohmSemiconductor/Linux-Kernel-sensor-Drivers/tree/master/RPR0521)
-* BM1390 pressure senosr. Under development - [BM1390](https://github.com/RohmSemiconductor/Linux-Kernel-sensor-Drivers/tree/master/BM1390)
+* BM1390 pressure senosr. Upstreaming ongoing - [BM1390](https://github.com/RohmSemiconductor/Linux-Kernel-sensor-Drivers/tree/master/BM1390)
 
 ### Upstreamed by others
-* KX132-1211 accelerometer. Upstreaming ongoing - [KX132-1211](https://github.com/RohmSemiconductor/Linux-Kernel-sensor-Drivers/tree/master/KX132-1211)
+* KX132-1211 accelerometer. Being merged - [KX132-1211](https://github.com/RohmSemiconductor/Linux-Kernel-sensor-Drivers/tree/master/KX132-1211)
 * KXCJK-1013 Accelerometer - [KXCJK-1013](https://github.com/RohmSemiconductor/Linux-Kernel-sensor-Drivers/tree/master/KXCJK-1013)
 * KXSD9 Accelerometer - [KXSD9](https://github.com/RohmSemiconductor/Linux-Kernel-sensor-Drivers/tree/master/KXSD9)
 * BH1710 Ambient light sensor - [BH1710](https://github.com/RohmSemiconductor/Linux-Kernel-sensor-Drivers/tree/master/BH17XX)
@@ -69,3 +69,15 @@ discussions, education and a chance to impact the direction Linux is heading
 to. We value all of this and want to give back innovations and improvements
 which may be small or big and aren't always directly relaed to our products.
 This helps us all.
+
+### Help!
+Revceived a .patch file? What should I do with this?
+A patch file is describing changes. Typoically used to deliver fixes or new code features as a set of changes that should be applied to some known 'base' release of the code. In case of our driver patch this is usually some Linux release which can be found from cover-letter patch (line like base-commit: 5e99f692d4e32e3250ab18d511894ca797407aec at the bottom), or can be said in email/website/whatever you found the patch from. Most usual way of applying the patch in a Linux is to use 'git' tool. Often the work-flow goes like:
+1. Clone the upstream Linux kernel repository (or, if you work with git and linux, add the upstream repository as a remote for your work repository).
+2. Fetch the sources and check-out the base-commit (or tag).
+3. use git am filename.patch to apply the chanes.
+
+After this you can use the usual git functionality to view the changes, merge them to other branches, diff them, review why some lines were changed and by whom etc.
+
+I added the source but it does not seem to build?
+The Linux kernel supports huge set of features. In order to keep the binary size sane, not all of the features are enabled at the same time. Also, some features can be mutually exclusive. Selecting what to build is done by the config system. You can add/remove features to build using tools like menuconfig to enable/disable features. It is possible your newly added code is not enabled to be compiled. Usually you can easily track if your file is compiled by opening the Makefile in folder where your code file is, and finding the respective config name from this file. Then you can search for the config using '/' in menuconfig tool. Please note that some configs have dependencies which need to also be enabled before the specific feature can be enabled.
