@@ -10,3 +10,4 @@ LCD backlight of TVs, mobile phones and tablet PCs.
 
 The ROHM Finland SWDC has created an IIO driver in collaboration with the
 Linux kernel community. Driver is merged to the [upstream](https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git) Linux v6.5.
+Computing lux values in the driver is being worked on.[The patch v1](https://lore.kernel.org/lkml/ZRq4pdDn6N73n7BO@dc78bmyyyyyyyyyyyyydt-3.rev.dnainternet.fi/) has been sent for review. It is possible this feature will be merged in upstream Linux v6.7.
