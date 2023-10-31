@@ -9,8 +9,4 @@ and tablet PCs.
 
 ## Linux
 
-The ROHM Finland SWDC is creating an IIO driver in collaboration with the
-upstream Linux kernel community. Driver is merged for testing in
-[upstream Linux tree](https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/drivers/iio/light/rohm-bu27008.c). First tag containing the driver is v6.6-rc1.
-Driver is expected to be officially released in Linux v6.6
-Computing lux values in the driver is being worked on.[The patch v1](https://lore.kernel.org/lkml/ZRq4pdDn6N73n7BO@dc78bmyyyyyyyyyyyyydt-3.rev.dnainternet.fi/) has been sent for review. It is possible this feature will be merged in upstream Linux v6.7.
+The ROHM Finland SWDC has created an IIO driver in collaboration with the Linux kernel community. Driver is merged to the [upstream Linux](https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git) v6.6. Support for computing lux values in the driver is being integrated and is currently in IIO git tree [testing branch](https://git.kernel.org/pub/scm/linux/kernel/git/jic23/iio.git/log/?h=testing). Feature is expected to be merged in upstream Linux v6.7.
