@@ -4,4 +4,6 @@ KX132ACR-LBZ is an industrial grade 3-axis accelerometer from ROHM. The sensor f
 
 ## Linux:
 
-The upstream KX022A Linux driver which ROHM has developed in collaboration with the Linux kernel community can with minor modifications be used to drive the KX132ACR-LBZ. Work for supporting this variant in upstream driver is being done, see [patch v1](https://lore.kernel.org/all/cover.1695819243.git.mazziesaccount@gmail.com/). Meanwhile you can find the support for KX132ACR-LBZ added on top of Linux v6.5 [here](https://github.com/RohmSemiconductor/Linux-Kernel-Sensor-Drivers/commits/kx132acr-lbz).
+The upstream KX022A Linux driver which ROHM has developed in collaboration with the Linux kernel community can with minor modifications be used to drive the KX132ACR-LBZ. Work for supporting this variant in upstream driver 
+is currently merged in [upstream Linux IIO git tree's testing branch](https://git.kernel.org/pub/scm/linux/kernel/git/jic23/iio.git/log/?h=testing) where it can be obtained for testing. Support is expected to be released in Linux v6.7.
+You can also find the support for KX132ACR-LBZ added on top of Linux v6.5 [here](https://github.com/RohmSemiconductor/Linux-Kernel-Sensor-Drivers/commits/kx132acr-lbz).
