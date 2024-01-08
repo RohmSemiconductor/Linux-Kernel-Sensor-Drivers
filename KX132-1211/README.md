@@ -4,5 +4,6 @@ KX132-1211 is a 3-axis accelerometer from ROHM/Kionix. The KX132-1211 is in many
 
 ## Linux:
 
-The upstream KX022A Linux driver which ROHM has developed in collaboration with the Linux kernel community has been modified by Mehdi Daijt to support KX132-1211. Please note that the work done by Mehdi is not officially related to ROHM company. Please, use the regular upstream Linux maintainer information when working with the driver. The upstreaming process is ongoing. You can find the Mehdi's work from [IIO tree testing branch](https://git.kernel.org/pub/scm/linux/kernel/git/jic23/iio.git/log/?h=testing).
+The upstream KX022A Linux driver which ROHM has developed in collaboration with the Linux kernel community has been modified by Mehdi Daijt to support KX132-1211. Please note that the work done by Mehdi is not officially related to ROHM company. Please, use the regular upstream Linux maintainer information when working with the driver.
 
+The KX132-1211 support was include in the Linux kernel v6.7.
