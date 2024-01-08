@@ -11,4 +11,4 @@ configured to be "weak", "middle" or "strong" filtering.
 
 ## Linux
 
-The ROHM Finland SWDC is developing a Linux IIO driver in collaboration with the Linux kernel community. The driver is currently merged in [upstream Linux IIO git tree's testing branch](https://git.kernel.org/pub/scm/linux/kernel/git/jic23/iio.git/log/?h=testing) where it can be obtained for testing. Driver is currently expected to be released in upstream Linux v6.7.
+The ROHM Finland SWDC has created an IIO driver in collaboration with the Linux kernel community. Driver is included in Linux kernel v6.7.
