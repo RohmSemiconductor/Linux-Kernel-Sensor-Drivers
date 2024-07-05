@@ -937,12 +937,10 @@ static int bu27034_calc_mlux(struct bu27034_data *data, __le16 *res, int *val)
 		d1_d0_ratio_scaled /= ch0 * gain1;
 	}
 
-	if (d1_d0_ratio_scaled < 87)
+	if (d1_d0_ratio_scaled < 150)
 		ret = bu27034_fixp_calc_lx(ch0, ch1, gain0, gain1, meastime, 0);
-	else if (d1_d0_ratio_scaled < 100)
-		ret = bu27034_fixp_calc_lx(ch0, ch1, gain0, gain1, meastime, 1);
 	else
-		ret = bu27034_fixp_calc_lx(ch0, ch1, gain0, gain1, meastime, 2);
+		ret = bu27034_fixp_calc_lx(ch0, ch1, gain0, gain1, meastime, 1);
 
 	if (ret < 0)
 		return ret;
