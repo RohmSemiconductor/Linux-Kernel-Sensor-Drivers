@@ -1,10 +1,23 @@
-# The BU27034 has changed. Please wait for update
+# The BU27034ANUC
 
-The original BU27034NUC sensor was redesigned. The new sensor is BU27034**A**NUC. We are currently developing Linux device driver for the new BU27034ANUC variant. The first version of the patch series to convert the old upstream driver to work with new BU27034ANUC was sent to [the upstream mail list](https://lore.kernel.org/all/cover.1718013518.git.mazziesaccount@gmail.com/) for review. The upstream device driver mentioned bottom of this page is **not** working with the new sensor. This page will be updated when the new driver has passed the reviews and is merged to the upstream Linux. Meanwhile, you can see how the work proceeds by following the linux kerenel development mailing lists. The development version is also tagged [here](https://github.com/RohmSemiconductor/Linux-Kernel-Sensor-Drivers/releases/tag/BU27034ANUC-v1.0). Please note that the driver is provided as is, without a warranty and should be treated as a reference design only.
+The original BU27034NUC sensor was redesigned. The new sensor is BU27034**A**NUC.
 
-Information below concerns the old BU27034NUC and is obsolete. It is kept here until the upstream driver is updated to work with the new variant.
+The ROHM BU27034ANUC is a digital Ambient Light Sensor IC with I²C bus interface. This IC can be used for obtaining ambient light data for example for adjusting LCD and backlight power of TV and mobile phone. It is capable of detecting a very wide range of illuminance.
+
+## Linux Driver
+
+The old BU27034 upstream driver code was re-written to support the new BU27034ANUC variant.
+Please note that the upstream device driver is **not** working with the new sensor. The patches converting the driver to work with the new sensor variant are currenrly merged in the IIO tree. Changes are expected to be relased at Linux v6.12. At the moment the changes can be found from the [Linux IIO subsystem testing tree](https://git.kernel.org/pub/scm/linux/kernel/git/jic23/iio.git/log/?h=testing). Commits:
+
+- 3c9edf76791e ("dt-bindings: iio: BU27034 => BU27034ANUC")
+- dd77c0ff9936 ("bu27034: ROHM BU27034NUC to BU27034ANUC")
+- acfc80c702fc ("bu27034: ROHM BU27034NUC to BU27034ANUC drop data2")
+- bb1059815f56 ("bu27034: ROHM BU27034ANUC correct gains and times")
+- eb13959e2dea ("bu27034: ROHM BU27034ANUC correct lux calculation")
 
 ---
+
+Information below concerns the old BU27034NUC and is obsolete. It is kept here until the upstream driver is updated to work with the new variant.
 
 > ## ROHM BU27034 Ambient Light Sensor
 > 

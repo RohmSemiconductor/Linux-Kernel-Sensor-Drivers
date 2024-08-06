@@ -37,11 +37,12 @@ developed/maintained.
 ### Upstream status
 * BU27008 RGBC. Fully upstream - [BU27008](https://github.com/RohmSemiconductor/Linux-Kernel-Sensor-Drivers/tree/master/BU27008)
 * BU27010 RGBC/IR + Fully upstream - [BU27010](https://github.com/RohmSemiconductor/Linux-Kernel-Sensor-Drivers/tree/master/BU27010)
-* BU27034 Ambient Light Sensor. Fully upstream - [BU27034](https://github.com/RohmSemiconductor/Linux-Kernel-Sensor-Drivers/tree/master/BU27034)
+* BU27034ANUC Ambient Light Sensor. Fully upstream - [BU27034](https://github.com/RohmSemiconductor/Linux-Kernel-Sensor-Drivers/tree/master/BU27034)
 * KX022A accelerometer. Fully upstream - [KX022A](https://github.com/RohmSemiconductor/Linux-Kernel-sensor-Drivers/tree/master/KX022A)
 * KX132ACR-LBZ accelerometer. Fully upstream - [KX132ACR-LBZ](https://github.com/RohmSemiconductor/Linux-Kernel-sensor-Drivers/tree/master/KX132ACR-LBZ)
 * RPR0521 ambient light/proximity. Fully upstream - [RPR0521](https://github.com/RohmSemiconductor/Linux-Kernel-sensor-Drivers/tree/master/RPR0521)
 * BM1390 pressure senosr. Fully upstream - [BM1390](https://github.com/RohmSemiconductor/Linux-Kernel-sensor-Drivers/tree/master/BM1390)
+* BU27034NUC Ambient Light Sensor. Obsoleted - [BU27034](https://github.com/RohmSemiconductor/Linux-Kernel-Sensor-Drivers/tree/master/BU27034)
 
 ### Upstreamed by others
 * KX132-1211 accelerometer - [KX132-1211](https://github.com/RohmSemiconductor/Linux-Kernel-sensor-Drivers/tree/master/KX132-1211)
@@ -52,6 +53,7 @@ developed/maintained.
 * BH1721 Ambient light sensor - [BH1721](https://github.com/RohmSemiconductor/Linux-Kernel-sensor-Drivers/tree/master/BH17XX)
 * BH1750 Ambient light sensor - [BH1750](https://github.com/RohmSemiconductor/Linux-Kernel-sensor-Drivers/tree/master/BH17XX)
 * BH1751 Ambient light sensor - [BH1751](https://github.com/RohmSemiconductor/Linux-Kernel-sensor-Drivers/tree/master/BH17XX)
+* BH1745 Colour sensor
 
 ### Input drivers (not upstream)
 Please see the [ROHM/Kionix input drivers](https://github.com/RohmSemiconductor/Linux-Kernel-Input-Drivers) for:
