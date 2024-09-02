@@ -1,6 +1,6 @@
 # ROHM/Kionix 3-Axis Accelerometer IC KX132-1211
 
-KX132-1211 is a 3-axis accelerometer from ROHM/Kionix. The KX132-1211 is in many aspects similar to the [KX022A](https://github.com/RohmSemiconductor/Linux-Kernel-Sensor-Drivers/tree/master/KX022A) but has an improved FIFO and advanced data path engine.
+KX132-1211 is a 3-axis accelerometer from ROHM/Kionix. The KX132-1211 is in many aspects similar to the [KX022A](https://github.com/RohmSemiconductor/Linux-Kernel-Sensor-Drivers/tree/master/Sensors/KX022A) but has an improved FIFO and advanced data path engine.
 
 ## Linux:
 
