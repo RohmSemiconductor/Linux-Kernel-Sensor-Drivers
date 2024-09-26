@@ -9,11 +9,11 @@ The ROHM Finland SWDC has created an IIO driver in collaboration with the Linux 
 ## Configuration options
 
 Please include following options to the kernel configuration:
-CONFIG_IIO_KX022A_I2C
-CONFIG_IIO_KX022A_SPI
+- CONFIG_IIO_KX022A_I2C
+- CONFIG_IIO_KX022A_SPI
 
 selecting one of the above using the Linux configuration tools like 'menuconfig' will enable also the generic support for the KX022A:
-CONFIG_IIO_KX022A
+- CONFIG_IIO_KX022A
 It should not be necessary to enable this manually.
 
 ## Support and known issues
