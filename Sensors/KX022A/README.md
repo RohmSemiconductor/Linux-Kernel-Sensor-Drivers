@@ -4,7 +4,7 @@ KX022ACR-Z is a 3-axis accelerometer from ROHM/Kionix. The sensor features inclu
 
 ## Linux:
 
-The ROHM Finland SWDC has created an IIO driver in collaboration with the Linux kernel community. Driver is included in Linux kernel v6.2.
+The ROHM Finland SWDC has created an IIO driver in collaboration with the Linux kernel community. Driver is included in [Linux kernel](https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/drivers/iio/accel/kionix-kx022a.c) v6.2 onwards.
 
 ## Configuration options
 
