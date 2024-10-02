@@ -6,8 +6,11 @@ KX022ACR-Z is a 3-axis accelerometer from ROHM/Kionix. The sensor features inclu
 
 The ROHM Finland SWDC has created an IIO driver in collaboration with the Linux kernel community. The [driver](https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/drivers/iio/accel/kionix-kx022a.c) is included in Linux kernel v6.2 onwards.
 
-## Configuration options
+### Code and documentation
+- code files kionix-kx022a* in the [Linux tree's IIO subsystem](https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/drivers/iio/accel).
+- device-tree bindings in the [Linux device-tree binding documentation](https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/Documentation/devicetree/bindings/iio/accel/kionix,kx022a.yaml).
 
+### Configuration options
 Please include following options to the kernel configuration:
 - CONFIG_IIO_KX022A_I2C
 - CONFIG_IIO_KX022A_SPI
