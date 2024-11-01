@@ -38,7 +38,7 @@ developed/maintained.
 * BU27008 RGBC. Fully upstream - [BU27008](https://github.com/RohmSemiconductor/Linux-Kernel-Sensor-Drivers/tree/master/Sensors/BU27008)
 * BU27010 RGBC/IR + Fully upstream - [BU27010](https://github.com/RohmSemiconductor/Linux-Kernel-Sensor-Drivers/tree/master/Sensors/BU27010)
 * BU27034ANUC Ambient Light Sensor. Fully upstream - [BU27034](https://github.com/RohmSemiconductor/Linux-Kernel-Sensor-Drivers/tree/master/Sensors/BU27034)
-* KX022A accelerometer. Fully upstream - [KX022A](https://github.com/RohmSemiconductor/Linux-Kernel-sensor-Drivers/tree/master/Sensors/KX022A)
+* KX022ACR-Z accelerometer. Fully upstream - [KX022A](https://github.com/RohmSemiconductor/Linux-Kernel-sensor-Drivers/tree/master/Sensors/KX022A)
 * KX132ACR-LBZ accelerometer. Fully upstream - [KX132ACR-LBZ](https://github.com/RohmSemiconductor/Linux-Kernel-sensor-Drivers/tree/master/Sensors/KX132ACR-LBZ)
 * RPR0521 ambient light/proximity. Fully upstream - [RPR0521](https://github.com/RohmSemiconductor/Linux-Kernel-sensor-Drivers/tree/master/Sensors/RPR0521)
 * BM1390 pressure senosr. Fully upstream - [BM1390](https://github.com/RohmSemiconductor/Linux-Kernel-sensor-Drivers/tree/master/Sensors/BM1390)
