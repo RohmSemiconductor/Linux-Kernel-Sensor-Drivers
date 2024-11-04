@@ -9,16 +9,11 @@ Upstream Linux v6.2 onwards
 - code files kionix-kx022a* in the [Linux tree's IIO subsystem](https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/drivers/iio/accel).
 - device-tree bindings in the [Linux device-tree binding documentation](https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/Documentation/devicetree/bindings/iio/accel/kionix,kx022a.yaml).
 
+<!-- If you're reading the raw-text, you can find the included stuff from the _includes folder.
+Or you can head to the and not the pages in https://rohmsemiconductor.github.io/Linux-Kernel-Sensor-Drivers/
+and see the processed output -->
 
-### Linux subsystem:
-IIO (Industrial input/output) 
-
-### General driver information
-
-The driver is called “kionix-kx022a”. It supports multiple ROHM accelerometers. For the sake of simplicity, we refer to it as KX022A here.
-
-
-The KX022A Linux driver supports obtaining acceleration data via standard Linux IIO interfaces. Both SPI and I2C are supported. One-shot data can be easily obtained using the IIO sysfs ABI. The KX022A driver also supports using the hardware FIFO with watermark interrupt, as well as a software buffer and a data-ready interrupt. Even though the sensor hardware supports data-rates up to 1600 Hz, the sensor driver limits the maximum data rate to 200 Hz to avoid performance issues. Selecting different G-ranges is also supported.
+{% include kx022a_info.md %}
 
 ### Devicetree example:
 
@@ -48,15 +43,6 @@ Where,
 - “interrupt-names” should be set to INT1 or INT2 depending on the used pin.
 - power supplies “io-vdd-supply” and “vdd-supply” should reference the regulator which is supplying power to the sensor. (The Linux kernel may populate a “dummy” supply for the sensor if supply regulators are not modeled in the device-tree).
 
-
-### Configuration options
-Please include the following options to the kernel configuration:
-- CONFIG_IIO_KX022A_I2C
-- CONFIG_IIO_KX022A_SPI
-
-selecting one of the above using the Linux configuration tools like 'menuconfig' will also enable the generic support:
-- CONFIG_IIO_KX022A. - It is not necessary to enable this manually.
-
 <!-- If you're reading the raw-text, you can find the included stuff from the _includes folder.
 Or you can head to the and not the pages in https://rohmsemiconductor.github.io/Linux-Kernel-Sensor-Drivers/
 and see the processed output -->
@@ -66,8 +52,10 @@ and see the processed output -->
 - [Datasheet](https://fscdn.rohm.com/kionix/en/datasheet/kx022acr-z-e.pdf)
 - [Product Page](https://www.rohm.com/products/sensors-mems/accelerometer-ics/kx022acr-z-product#productDetail)
 
-## Support and known issues
-We strongly recommend using the latest upstream version of the driver as plenty of fixes are done to the drivers by the Linux kernel community, and there is no database for all known issues. Issues spotted by us during development (like adding support for new hardware or improving feature coverage) may be reported to the [issue tracker](https://github.com/RohmSemiconductor/Linux-Kernel-Sensor-Drivers/issues?q=is%3Aissue+repo%3ALinux-Kernel-Sensor-Drivers+KX022A+in%3Atitle). Please use the regular upstream maintenance information for support. The maintenance information can be found from the linux [MAINTAINERS](https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/MAINTAINERS) file. You can read the MAINTAINERS manually or use the [get_maintainer.pl](https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/scripts/get_maintainer.pl)
+{% include upstream_support.md %}
+
+### Known issues
+We strongly recommend using the latest upstream version of the driver as plenty of fixes are done to the drivers by the Linux kernel community and there is no database for all known issues. Issues spotted by us during development (like adding support for new hardware or improving feature coverage) may have been reported to the [issue tracker](https://github.com/RohmSemiconductor/Linux-Kernel-Sensor-Drivers/issues?q=is%3Aissue+repo%3ALinux-Kernel-Sensor-Drivers+KX022A+in%3Atitle).
 
 ### Please note:
 
