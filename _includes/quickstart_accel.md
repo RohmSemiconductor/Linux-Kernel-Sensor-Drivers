@@ -4,7 +4,7 @@ Below is an example of simple raw data captures from a sensor obtained using the
 
 #### Reading one-shot data from the sensor via the IIO sysfs ABI.
 
-1: Find the right IIO device based on the device name:
+1: Find the right IIO device based on the device name.
 
 ```
 root@arm:/home/debian# grep -RIn kx022-accel /sys/bus/iio/devices/*/name
@@ -12,8 +12,8 @@ root@arm:/home/debian# grep -RIn kx022-accel /sys/bus/iio/devices/*/name
 /sys/bus/iio/devices/trigger0/name:1:kx022-acceldata-rdy-dev0
 root@arm:/home/debian#
 ```
-
 In the example above:
+- 'kx022-accel' is used as sensor name in 'grep' command. You should use the name matching your sensor.
 - /sys/bus/iio/devices/iio:device0 is the kx022a IIO device
 - /sys/bus/iio/devices/trigger0 is the kx022a data-ready interrupt trigger0
 
@@ -50,7 +50,7 @@ root@arm:/home/debian# echo "0.000598550 * 16178" |bc -l
 #### Launching the measurement and buffering data from the sensor FIFO:
 
 
-You can also experiment with continuous measurement and buffers. A quick way forward is using the iio_generic_buffer tool which is distributed in the Linux kernel sources “tools/iio” folder.
+You can also experiment with continuous measurement and buffers. A quick way forward is using the iio_generic_buffer tool which is distributed in the Linux kernel sources “tools/iio” folder. Note that examples use sensor and trigger names for kx022-accel. Names you should use depend on the actual sensor model.
 
 ```
 root@arm:/home/debian# /iio_generic_buffer -a -c 10 -g -n kx022-accel
