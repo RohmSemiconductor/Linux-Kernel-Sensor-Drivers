@@ -1,8 +1,3 @@
----
-name: KX022ACR-Z
-compatible: kionix,kx022a
----
-
 # ROHM/Kionix 3-Axis Accelerometer IC KX022ACR-Z
 
 KX022ACR-Z is a 3-axis accelerometer from ROHM/Kionix. The sensor features include variable ODRs, I2C and SPI control, FIFO/LIFO with watermark IRQ, tap/motion detection, wake-up & back-to-sleep events, four acceleration ranges (-2..+2, -4..+4, -8..+8 and -16..+16 g), etc.
