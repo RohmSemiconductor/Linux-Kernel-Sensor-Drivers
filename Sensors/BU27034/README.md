@@ -4,7 +4,7 @@ markdownhint: If you're reading the raw-text, you can find the included stuff fr
 bindinglink: https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/Documentation/devicetree/bindings/iio/light/rohm,bu27034anuc.yaml
 sensorname: BU27034ANUC
 compatible: rohm,bu27034anuc
-dtsupply: vdd-supply = <&vdd>;
+dtsupply: vdd-supply = <&vdd>
 issuelink: https://github.com/RohmSemiconductor/Linux-Kernel-Sensor-Drivers/issues?q=is%3Aissue+repo%3ALinux-Kernel-Sensor-Drivers+bu27034anuc%3A+in%3Atitle+
 ---
 
