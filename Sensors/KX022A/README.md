@@ -1,5 +1,5 @@
 ---
-permalink: /Sensors/KX022A
+permalink: /Sensors/KX022A/
 ---
 
 # ROHM/Kionix 3-Axis Accelerometer IC KX022ACR-Z

@@ -1,5 +1,5 @@
 ---
-permalink: /Sensors/KX132ACR-LBZ
+permalink: /Sensors/KX132ACR-LBZ/
 ---
 
 # ROHM 3-Axis Accelerometer IC KX132ACR-LBZ
