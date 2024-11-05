@@ -1,3 +1,13 @@
+---
+permalink: /Sensors/BU27008/
+markdownhint: If you're reading the raw-text, you can find the included stuff from the _includes folder. Or you can head to the pages in https://rohmsemiconductor.github.io/Linux-Kernel-Sensor-Drivers/
+bindinglink: https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/Documentation/devicetree/bindings/iio/light/rohm,bu27008.yaml
+sensorname: BU27008
+devicetype: light-sensor
+compatible: rohm,bu27008
+upstreamed: v6.5
+---
+
 # ROHM BU27008 RGB + C/IR
 
 The ROHM BU27008 is a sensor with 5 photodiodes (red, green, blue, clear
@@ -6,11 +16,9 @@ available and two out of the rest three (blue, clear, IR) can be
 selected to be simultaneously measured. Typical application is adjusting
 LCD backlight of TVs, mobile phones and tablet PCs.
 
-## Linux
+{% include generic_driver_info.md %}
+Support for computing lux values was added in the Linux v6.8
 
+{% include simple_dt_example.md %}
 
-The ROHM Finland SWDC has created an IIO driver in collaboration with the
-Linux kernel community. Driver is merged to the [upstream Linux](https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git) v6.5.
-Support for computing lux values in the driver is being integrated and is currently in
-IIO git tree [testing branch](https://git.kernel.org/pub/scm/linux/kernel/git/jic23/iio.git/log/?h=testing).
-Feature is expected to be merged in upstream Linux v6.7.
+{% include upstream_support.md %}
