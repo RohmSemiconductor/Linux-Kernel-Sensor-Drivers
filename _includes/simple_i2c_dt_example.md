@@ -25,6 +25,6 @@ Where,
 {%- if page.dtsupply %}
 - {{ page.dtsupply }} is the regulator supplying power to the device.
 {% endif -%}
-{% if page.bindinglink -%}
+{%- if page.bindinglink %}
 See [the binding document]({{ page.bindinglink }}) for more information.
 {% endif %}
