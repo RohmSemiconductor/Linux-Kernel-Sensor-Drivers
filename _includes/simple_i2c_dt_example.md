@@ -24,7 +24,7 @@ Where,
 - "reg" must be device's I2C address.
 {%- if page.dtsupply %}
 - {{ page.dtsupply }} is the regulator supplying power to the device.
-{% endif -%}
-{% if page.bindinglink %}
+{% endif %}
+{%- if page.bindinglink %}
 See [the binding document]({{ page.bindinglink }}) for more information.
 {% endif %}
