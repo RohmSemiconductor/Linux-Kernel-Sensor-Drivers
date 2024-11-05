@@ -1,6 +1,6 @@
 ---
 permalink: /Sensors/KX132ACR-LBZ/
-markdownhint: If you're reading the raw-text, you can find the included stuff from the _includes folder. Or you can head to the and not the pages in https://rohmsemiconductor.github.io/Linux-Kernel-Sensor-Drivers/
+markdownhint: If you're reading the raw-text, you can find the included stuff from the _includes folder. Or you can head to the pages in https://rohmsemiconductor.github.io/Linux-Kernel-Sensor-Drivers/
 sensorname: KX132ACR-LBZ
 compatible: rohm,kx132acr-lbz
 upstreamed: v6.7

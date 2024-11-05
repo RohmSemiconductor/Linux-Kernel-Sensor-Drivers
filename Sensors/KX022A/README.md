@@ -1,6 +1,6 @@
 ---
 permalink: /Sensors/KX022A/
-markdownhint: If you're reading the raw-text, you can find the included stuff from the _includes folder. Or you can head to the and not the pages in https://rohmsemiconductor.github.io/Linux-Kernel-Sensor-Drivers/
+markdownhint: If you're reading the raw-text, you can find the included stuff from the _includes folder. Or you can head to the pages in https://rohmsemiconductor.github.io/Linux-Kernel-Sensor-Drivers/
 sensorname: KX022ACR-Z
 compatible: kionix,kx022a
 upstreamed: v6.2
