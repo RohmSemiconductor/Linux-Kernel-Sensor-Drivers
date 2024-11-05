@@ -11,6 +11,9 @@
 {%- endif %}
         compatible = {{ page.compatible }};
         reg = <0x38>;
+{%- if page.dtsupply %}
+        {{ page.dtsupply }}
+{%- endif %}
       };
     };
 ```
@@ -19,7 +22,9 @@ Where,
 
 - "compatible" must be "{{ page.compatible }}" for the {{ page.sensorname }}.
 - "reg" must be device's I2C address.
-
+{%- if page.dtsupply %}
+- {{ page.dtsupply }} is the regulator supplying power to the device.
+{% endif -%}
 {% if page.bindinglink -%}
 See [the binding document]({{ page.bindinglink }}) for more information.
 {% endif %}
