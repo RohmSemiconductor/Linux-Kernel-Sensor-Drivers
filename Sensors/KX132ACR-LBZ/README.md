@@ -11,17 +11,18 @@ issuelink: https://github.com/RohmSemiconductor/Linux-Kernel-Sensor-Drivers/issu
 
 KX132ACR-LBZ is an industrial grade 3-axis accelerometer from ROHM. The sensor features include variable ODRs, I2C and SPI control, FIFO with watermark IRQ, wake-up & back-to-sleep events, four acceleration ranges (-2..+2, -4..+4, -8..+8 and -16..+16 g), etc.
 
+## Resources
+- [Datasheet](https://fscdn.rohm.com/kionix/en/datasheet/kx132acr-lbz-e.pdf)
+- [Product Page](https://www.rohm.com/products/sensors-mems/accelerometer-ics/kx132acr-lbz-product)
+
 {% include kx022a_info.md %}
 
 {% include kx022a_dt_example.md %}
 
 {% include upstream_support.md %}
 
-## Resources
-- [Datasheet](https://fscdn.rohm.com/kionix/en/datasheet/kx132acr-lbz-e.pdf)
-- [Product Page](https://www.rohm.com/products/sensors-mems/accelerometer-ics/kx132acr-lbz-product)
-
 {% include known_issues.md %}
 
 ### Please note:
 The driver had a [scaling bug](https://github.com/RohmSemiconductor/Linux-Kernel-Sensor-Drivers/issues/5) which made it reporting values in micro m/s^2 instead of m/s^2. The fix is integrated to mainline in v6.7-rc7. If you use a kernel older than this, the fix can be found from [here](https://lore.kernel.org/all/ZTEt7NqfDHPOkm8j@dc78bmyyyyyyyyyyyyydt-3.rev.dnainternet.fi/).
+
