@@ -20,6 +20,6 @@ and tablet PCs.
 {% include generic_driver_info.md %}
 Support for computing lux values was added in the Linux v6.8.
 
-{% include simple_dt_example.md %}
+{% include simple_i2c_dt_example.md %}
 
 {% include upstream_support.md %}
