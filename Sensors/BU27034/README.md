@@ -8,7 +8,7 @@ dtsupply: vdd-supply = <&vdd>
 issuelink: https://github.com/RohmSemiconductor/Linux-Kernel-Sensor-Drivers/issues?q=is%3Aissue+repo%3ALinux-Kernel-Sensor-Drivers+bu27034anuc%3A+in%3Atitle+
 ---
 
-# The BU27034ANUC ambient light sensor
+# The BU27034ANUC Ambient Light Sensor
 
 The original BU27034NUC sensor was redesigned. The new sensor is BU27034**A**NUC.
 
@@ -36,6 +36,9 @@ The patches converting the old driver to work with the new sensor variant were f
 {% include known_issues.md %}
 
 ---
+
+
+
 
 Information below concerns the old BU27034NUC and is obsolete. It is here only to show the differencies for those who might have obtained the old device driver.
 
