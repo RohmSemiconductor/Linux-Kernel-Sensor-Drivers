@@ -4,6 +4,7 @@ markdownhint: If you're reading the raw-text, you can find the included stuff fr
 sensorname: KX022ACR-Z
 compatible: kionix,kx022a
 upstreamed: v6.2
+issuelink: https://github.com/RohmSemiconductor/Linux-Kernel-Sensor-Drivers/issues?q=is%3Aissue+repo%3ALinux-Kernel-Sensor-Drivers+KX022A+in%3Atitle
 ---
 
 # ROHM/Kionix 3-Axis Accelerometer IC KX022ACR-Z
@@ -22,8 +23,7 @@ KX022ACR-Z is a 3-axis accelerometer from ROHM/Kionix. The sensor features inclu
 
 {% include upstream_support.md %}
 
-### Known issues
-We strongly recommend using the latest upstream version of the driver as plenty of fixes are done to the drivers by the Linux kernel community and there is no database for all known issues. Issues spotted by us during development (like adding support for new hardware or improving feature coverage) may have been reported to the [issue tracker](https://github.com/RohmSemiconductor/Linux-Kernel-Sensor-Drivers/issues?q=is%3Aissue+repo%3ALinux-Kernel-Sensor-Drivers+KX022A+in%3Atitle).
+{% include known_issues.md %}
 
 ### Please note:
 
