@@ -19,6 +19,8 @@ KX132ACR-LBZ is an industrial grade 3-axis accelerometer from ROHM. The sensor f
 
 {% include kx022a_dt_example.md %}
 
+{% include quickstart_accel.md %}
+
 {% include upstream_support.md %}
 
 {% include known_issues.md %}
