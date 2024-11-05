@@ -4,9 +4,9 @@
     i2c {
       #address-cells = <1>;
       #size-cells = <0>;
-{% if page.devicetype -%}
+{%- if page.devicetype %}
       {{ page.devicetype }}@38 {
-{%- else -%}
+{%- else %}
       sensor@38 {
 {%- endif %}
         compatible = {{ page.compatible }};
