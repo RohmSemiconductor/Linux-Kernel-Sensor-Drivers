@@ -14,6 +14,12 @@
 {%- if page.dtsupply %}
         {{ page.dtsupply }};
 {%- endif %}
+{%- if page.dtintparent %}
+        interrupt-parent =  {{ page.dtintparent }};
+{%- endif %}
+{%- if page.dtints %}
+        interrupts = {{ page.dtints }};
+{%- endif %}
       };
     };
 ```
@@ -24,6 +30,12 @@ Where,
 - "reg" must be device's I2C address.
 {%- if page.dtsupply %}
 - {{ page.dtsupply }} refers to the regulator supplying power to the device.
+{%- endif %}
+{%- if page.dtintparent %}
+- "interrupt-parent" refers to the interrupt controlled IRQ is wired to.
+{%- endif %}
+{%- if page.dtints %}
+- "interrupts" specifies the pin in parent interrupt controller. See interrupt controller binding document for details.
 {% endif %}
 {% if page.bindinglink %}
 See [the binding document]({{ page.bindinglink }}) for more information.
