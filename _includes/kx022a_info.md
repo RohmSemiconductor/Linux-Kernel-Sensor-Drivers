@@ -15,6 +15,10 @@ The driver is called “kionix-kx022a”. It supports multiple ROHM acceleromete
 
 The KX022A Linux driver supports obtaining acceleration data via standard Linux IIO interfaces. Both SPI and I2C are supported. One-shot data can be easily obtained using the IIO sysfs ABI. The KX022A driver also supports using the hardware FIFO with watermark interrupt, as well as a software buffer and a data-ready interrupt. Even though the sensor hardware supports data-rates up to 1600 Hz, the sensor driver limits the maximum data rate to 200 Hz to avoid performance issues. Selecting different G-ranges is also supported.
 
+<!-- TODO: Split this include to kx022a_info.md, extauthor.md and kconfig.md -->
+{% if page.extauthor %}
+  The driver support for this IC has been authored by {{ page.extauthor }}.
+{% endif %}
 
 ### Configuration options
 Please include the following options to the kernel configuration:

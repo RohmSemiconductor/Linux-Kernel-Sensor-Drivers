@@ -1,9 +1,28 @@
+---
+permalink: /Sensors/KX132-1211/
+markdownhint: If you're reading the raw-text, you can find the included stuff from the _includes folder. Or you can head to the pages in https://rohmsemiconductor.github.io/Linux-Kernel-Sensor-Drivers/
+sensorname: KX132-1211
+compatible: kionix,kx132-1211
+upstreamed: v6.7
+extauthor: Mehdi Daijt
+issuelink: https://github.com/RohmSemiconductor/Linux-Kernel-Sensor-Drivers/issues?q=is%3Aissue+repo%3ALinux-Kernel-Sensor-Drivers+KX022A+in%3Atitle
+---
+
 # ROHM/Kionix 3-Axis Accelerometer IC KX132-1211
 
 KX132-1211 is a 3-axis accelerometer from ROHM/Kionix. The KX132-1211 is in many aspects similar to the [KX022A](https://github.com/RohmSemiconductor/Linux-Kernel-Sensor-Drivers/tree/master/Sensors/KX022A) but has an improved FIFO and advanced data path engine.
 
-## Linux:
+## Resources
+- [Datasheet](https://fscdn.rohm.com/kionix/en/datasheet/kx132-1211-e.pdf)
+- [Product Page](https://www.rohm.com/products/sensors-mems/accelerometer-ics/kx132-1211-product)
 
-The upstream KX022A Linux driver which ROHM has developed in collaboration with the Linux kernel community has been modified by Mehdi Daijt to support KX132-1211. Please note that the work done by Mehdi is not officially related to ROHM company. Please, use the regular upstream Linux maintainer information when working with the driver.
+{% include kx022a_info.md %}
 
-The KX132-1211 support was included in the Linux kernel v6.7.
+{% include kx022a_dt_example.md %}
+
+{% include quickstart_accel.md %}
+
+{% include upstream_support.md %}
+
+{% include known_issues.md %}
+
