@@ -1,5 +1,8 @@
 ---
 permalink: /Sensors/KX132ACR-LBZ/
+sensorname: KX132ACR-LBZ
+compatible: rohm,kx132acr-lbz
+markdownhint: If you're reading the raw-text, you can find the included stuff from the _includes folder. Or you can head to the and not the pages in https://rohmsemiconductor.github.io/Linux-Kernel-Sensor-Drivers/
 ---
 
 # ROHM 3-Axis Accelerometer IC KX132ACR-LBZ
@@ -8,47 +11,15 @@ KX132ACR-LBZ is an industrial grade 3-axis accelerometer from ROHM. The sensor f
 
 ## Linux:
 
-### Source code
+### Source code:
 Upstream Linux v6.7 onwards
 - code files kionix-kx022a* in the [Linux tree's IIO subsystem](https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/drivers/iio/accel).
 - device-tree bindings in the [Linux device-tree binding documentation](https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/Documentation/devicetree/bindings/iio/accel/kionix,kx022a.yaml).
 
-<!-- If you're reading the raw-text, you can find the included stuff from the _includes folder.
-Or you can head to the and not the pages in https://rohmsemiconductor.github.io/Linux-Kernel-Sensor-Drivers/
-and see the processed output -->
 {% include kx022a_info.md %}
 
-### Devicetree example:
+{% include kx022a_dt_example.md %}
 
-```
-    #include <dt-bindings/interrupt-controller/irq.h>
-    i2c {
-        #address-cells = <1>;
-        #size-cells = <0>;
-        accel@1f {
-            compatible = "rohm,kx132acr-lbz";
-            reg = <0x1f>;
-            interrupt-parent = <&gpio1>;
-            interrupts = <29 IRQ_TYPE_LEVEL_LOW>;
-            interrupt-names = "INT1";
-            io-vdd-supply = <&iovdd>;
-            vdd-supply = <&vdd>;
-        };
-    };
- ```
-
-Where,
-
-- “compatible” must be "rohm,kx132acr-lba" for the KX132ACR-LBZ.
-- “reg” must be the I2C slave address sensor is using.
-- “interrupt-parent” must reference the interrupt controller where the interrupt from the sensor is wired 
-- “interrupts” must specify the pin in the interrupt controller. How this is done is controller specific and should be found from the interrupt controller’s device tree binding documents.
-- “interrupt-names” should be set to INT1 or INT2 depending on the used pin.
-- power supplies “io-vdd-supply” and “vdd-supply” should reference the regulator which is supplying power to the sensor. (The Linux kernel may populate a “dummy” supply for the sensor if supply regulators are not modeled in the device-tree).
-
-<!-- If you're reading the raw-text, you can find the included stuff from the _includes folder.
-Or you can head to the and not the pages in https://rohmsemiconductor.github.io/Linux-Kernel-Sensor-Drivers/
-and see the processed output -->
 {% include upstream_support.md %}
 
 ## Resources
