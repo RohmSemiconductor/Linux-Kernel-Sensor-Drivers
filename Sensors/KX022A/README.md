@@ -1,21 +1,14 @@
 ---
 permalink: /Sensors/KX022A/
+markdownhint: If you're reading the raw-text, you can find the included stuff from the _includes folder. Or you can head to the and not the pages in https://rohmsemiconductor.github.io/Linux-Kernel-Sensor-Drivers/
 sensorname: KX022ACR-Z
 compatible: kionix,kx022a
-markdownhint: If you're reading the raw-text, you can find the included stuff from the _includes folder. Or you can head to the and not the pages in https://rohmsemiconductor.github.io/Linux-Kernel-Sensor-Drivers/
+upstreamed: v6.2
 ---
 
 # ROHM/Kionix 3-Axis Accelerometer IC KX022ACR-Z
 
 KX022ACR-Z is a 3-axis accelerometer from ROHM/Kionix. The sensor features include variable ODRs, I2C and SPI control, FIFO/LIFO with watermark IRQ, tap/motion detection, wake-up & back-to-sleep events, four acceleration ranges (-2..+2, -4..+4, -8..+8 and -16..+16 g), etc.
-
-## Linux:
-
-### Source code:
-Upstream Linux v6.2 onwards 
-- code files kionix-kx022a* in the [Linux tree's IIO subsystem](https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/drivers/iio/accel).
-- device-tree bindings in the [Linux device-tree binding documentation](https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/Documentation/devicetree/bindings/iio/accel/kionix,kx022a.yaml).
-
 
 {% include kx022a_info.md %}
 
