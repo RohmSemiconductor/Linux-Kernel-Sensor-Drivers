@@ -1,4 +1,18 @@
 # ROHM BM1390 Pressure + temperature sensor
+\
+
+\
+
+\
+
+> [!IMPORTANT]
+> These markdown info pages are no longer updated. Here is more up to date [documentation](https://rohmsemiconductor.github.io/Linux-Kernel-Sensor-Drivers/Sensors/BM1390/)
+
+\
+
+\
+
+\
 
 ROHM BM1390 is a pressure (and temperature) sensor.
 The BM1390GLV-Z can measure pressures ranging from 300 hPa to 1300 hPa with

@@ -1,4 +1,18 @@
 # The BU27034ANUC
+\
+
+\
+
+\
+
+> [!IMPORTANT]
+> These markdown info pages are no longer updated. Here is more up to date [documentation](https://rohmsemiconductor.github.io/Linux-Kernel-Sensor-Drivers/Sensors/BU27034/)
+
+\
+
+\
+
+\
 
 The original BU27034NUC sensor was redesigned. The new sensor is BU27034**A**NUC.
 

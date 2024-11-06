@@ -1,4 +1,18 @@
 # ROHM 3-Axis Accelerometer IC KX132ACR-LBZ
+\
+
+\
+
+\
+
+> [!IMPORTANT]
+> These markdown info pages are no longer updated. Here is more up to date [documentation](https://rohmsemiconductor.github.io/Linux-Kernel-Sensor-Drivers/Sensors/KX132ACR-LBZ/)
+
+\
+
+\
+
+\
 
 KX132ACR-LBZ is an industrial grade 3-axis accelerometer from ROHM. The sensor features include variable ODRs, I2C and SPI control, FIFO with watermark IRQ, wake-up & back-to-sleep events, four acceleration ranges (-2..+2, -4..+4, -8..+8 and -16..+16 g), etc.
 

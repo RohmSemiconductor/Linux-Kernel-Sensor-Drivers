@@ -1,4 +1,18 @@
 # ROHM BU27010 RGB + C/IR + Flicker sensor
+\
+
+\
+
+\
+
+> [!IMPORTANT]
+> These markdown info pages are no longer updated. Here is more up to date [documentation](https://rohmsemiconductor.github.io/Linux-Kernel-Sensor-Drivers/Sensors/BU27010/)
+
+\
+
+\
+
+\
 
 The ROHM BU27010 is a sensor with 6 photodiodes (red, green, blue, clear,
 IR and flickering detection) with five configurable channels. Red, green

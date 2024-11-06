@@ -1,4 +1,18 @@
 # ROHM ambient light and proximity sensor IC RPR0521
+\
+
+\
+
+\
+
+> [!IMPORTANT]
+> These markdown info pages are no longer updated. Here is more up to date [documentation](https://rohmsemiconductor.github.io/Linux-Kernel-Sensor-Drivers/Sensors/RPR0521/)
+
+\
+
+\
+
+\
 
 RPR0521 is an ambient light and proximity sensor from ROHM.
 
