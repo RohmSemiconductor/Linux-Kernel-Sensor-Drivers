@@ -1,13 +1,16 @@
-# Linux-Kernel-Sensor-Drivers
+# Linux sensor drivers for ROHM / Kionix sensors
+
 \
 \
 \
+
 > [!IMPORTANT]
 > These markdown info pages are no longer updated. Here is more up to date [documentation](https://rohmsemiconductor.github.io/Linux-Kernel-Sensor-Drivers/)
+
 \
 \
 \
-Linux sensor drivers for ROHM / Kionix sensors
+
 
 ROHM has been collaborating with the Linux kernel community and sees
 the value of open-source. Hence we want to contribute to community
