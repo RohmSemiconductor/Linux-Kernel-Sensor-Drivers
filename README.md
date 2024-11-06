@@ -1,5 +1,4 @@
-# Linux-Kernel-Sensor-Drivers
-Linux sensor drivers for ROHM / Kionix sensors
+# Linux sensor drivers for ROHM / Kionix sensors
 
 ROHM has been collaborating with the Linux kernel community and sees
 the value of open-source. Hence we want to contribute to community
