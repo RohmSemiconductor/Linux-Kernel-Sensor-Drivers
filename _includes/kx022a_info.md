@@ -5,12 +5,12 @@
 Upstream Linux {{ page.upstreamed }} onwards
 - code files kionix-kx022a* in the [Linux tree's IIO subsystem](https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/drivers/iio/accel).
 - device-tree bindings in the [Linux device-tree binding documentation](https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/Documentation/devicetree/bindings/iio/accel/kionix,kx022a.yaml).
-{% else %}
+{%- else %}
 Being upstreamed. See [Patches]({{ page.patchlink }}).
-{% if page.expectupstreamed %}
+{%- if page.expectupstreamed %}
 Currently expected to land in Linux {{ page.expectupstreamed }}
-{% endif %}
-{% endif %}
+{%- endif %}
+{%- endif %}
 
 
 ### Linux subsystem:
