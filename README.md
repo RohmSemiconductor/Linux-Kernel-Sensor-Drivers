@@ -13,6 +13,7 @@ and attempt to upstream the Linux drivers for our components.
 * KX022ACR-Z accelerometer. Fully upstream - <!-- [KX022A](https://github.com/RohmSemiconductor/Linux-Kernel-sensor-Drivers/tree/master/Sensors/KX022A) --> [KX022ACR-Z](Sensors/KX022A)
 * KX132ACR-LBZ accelerometer. Fully upstream - <!-- [KX132ACR-LBZ](https://github.com/RohmSemiconductor/Linux-Kernel-sensor-Drivers/tree/master/Sensors/KX132ACR-LBZ) --> [KX132ACR-LBZ](Sensors/KX132ACR-LBZ)
 * KX134ACR-LBZ accelerometer. Being upstreamed - [KX134ACR-LBZ](Sensors/KX134ACR-LBZ)
+* KX134-1211 accelerometer. Being upstreamed - [KX134-1211](Sensors/KX134-1211)
 * RPR0521 ambient light/proximity. Fully upstream - <!-- [RPR0521](https://github.com/RohmSemiconductor/Linux-Kernel-sensor-Drivers/tree/master/Sensors/RPR0521) --> [RPR0521](Sensors/RPR0521)
 * BM1390 pressure senosr. Fully upstream - <!-- [BM1390](https://github.com/RohmSemiconductor/Linux-Kernel-sensor-Drivers/tree/master/Sensors/BM1390) --> [BM1390](Sensors/BM1390)
 * BU27034NUC Ambient Light Sensor. Obsoleted - <!-- [BU27034](https://github.com/RohmSemiconductor/Linux-Kernel-Sensor-Drivers/tree/master/Sensors/BU27034) --> [BU27034](Sensors/BU27034)
