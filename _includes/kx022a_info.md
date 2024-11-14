@@ -10,7 +10,7 @@ Upstream Linux {{ page.upstreamed }} onwards
 Being upstreamed. See [Patches]({{ page.patchlink }}).
 {%- endif %}
 {%- if page.downstreamlink %}
-Here is a not maintained [reference driver]({{ page.downstreamlink }}) which you can try. Please note that this reference driver is provided as is, without a warranty. It is not a "production ready quality", and you are required to do all porting, fixing and testing while writing your driver using it as a starting point.
+Here is an unmaintained [reference driver]({{ page.downstreamlink }}) which you can try. Please note that this reference driver is provided as is, without a warranty. It is not a "production ready quality", and you are required to do all porting, fixing and testing while writing your driver using it as a starting point.
 {%- endif %}
 {%- if page.expectupstreamed %}
 Upstream driver is currently expected to land in Linux {{ page.expectupstreamed }}
