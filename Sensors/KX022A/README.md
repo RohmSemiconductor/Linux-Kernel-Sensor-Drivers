@@ -15,11 +15,14 @@ KX022ACR-Z is a 3-axis accelerometer from ROHM/Kionix. The sensor features inclu
 - [Datasheet](https://fscdn.rohm.com/kionix/en/datasheet/kx022acr-z-e.pdf)
 - [Product Page](https://www.rohm.com/products/sensors-mems/accelerometer-ics/kx022acr-z-product#productDetail)
 
+## Linux Driver:
+
+### Source code:
+{% include source_upstream_status.md %}
+
+{% include subsys_iio.md %}
+
 {% include kx022a_info.md %}
-
-{% include kx022a_dt_example.md %}
-
-{% include quickstart_accel.md %}
 
 {% include upstream_support.md %}
 

@@ -17,9 +17,12 @@ KX134-1211 is a 3-axis accelerometer from ROHM/Kionix. The KX134-1211 is similar
 - [Datasheet](https://fscdn.rohm.com/kionix/en/datasheet/kx134-1211-e.pdf)
 - [Product Page](https://www.rohm.com/products/sensors-mems/accelerometer-ics/kx134-1211-product)
 
+## Linux Driver:
+
+### Source code:
+{% include source_upstream_status.md %}
+
+{% include subsys_iio.md %}
+
 {% include kx022a_info.md %}
-
-{% include kx022a_dt_example.md %}
-
-{% include quickstart_accel.md %}
 
