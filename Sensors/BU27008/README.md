@@ -8,7 +8,13 @@ compatible: rohm,bu27008
 upstreamed: v6.5
 ---
 
-# ROHM BU27008 RGB + C/IR
+# The ROHM BU27008 is no longer available
+
+The BU27008 is cancelled. The driver is being removed from upstream. Information below is kept only for historical reasons.
+
+---
+
+## ROHM BU27008 RGB + C/IR
 
 The ROHM BU27008 is a sensor with 5 photodiodes (red, green, blue, clear
 and IR) with four configurable channels. Red and green being always

@@ -8,7 +8,12 @@ compatible: rohm,bu27010
 upstreamed: v6.6
 ---
 
-# ROHM BU27010 RGB + C/IR + Flicker sensor
+# The ROHM BU27010 is no longer available
+
+The BU27010 is cancelled. The driver is being removed from upstream. Information below is kept only for historical reasons.
+
+---
+## ROHM BU27010 RGB + C/IR + Flicker sensor
 
 The ROHM BU27010 is a sensor with 6 photodiodes (red, green, blue, clear,
 IR and flickering detection) with five configurable channels. Red, green
