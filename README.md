@@ -7,38 +7,40 @@ and attempt to upstream the Linux drivers for our components.
 ## List of Linux drivers for ROHM sensors
 
 ### Upstreamed by ROHM
-* BU27034ANUC Ambient Light Sensor. Fully upstream - [BU27034](Sensors/BU27034)<!-- [BU27034](https://github.com/RohmSemiconductor/Linux-Kernel-Sensor-Drivers/tree/master/Sensors/BU27034) -->
-* KX022ACR-Z accelerometer. Fully upstream -  [KX022ACR-Z](Sensors/KX022A)<!-- [KX022A](https://github.com/RohmSemiconductor/Linux-Kernel-sensor-Drivers/tree/master/Sensors/KX022A) -->
-* KX132ACR-LBZ accelerometer. Fully upstream -  [KX132ACR-LBZ](Sensors/KX132ACR-LBZ)<!-- [KX132ACR-LBZ](https://github.com/RohmSemiconductor/Linux-Kernel-sensor-Drivers/tree/master/Sensors/KX132ACR-LBZ) -->
-* KX134ACR-LBZ accelerometer. Being upstreamed - [KX134ACR-LBZ](Sensors/KX134ACR-LBZ)
-* KX134-1211 accelerometer. Being upstreamed - [KX134-1211](Sensors/KX134-1211)
-* RPR0521 ambient light/proximity. Fully upstream -  [RPR0521](Sensors/RPR0521)<!-- [RPR0521](https://github.com/RohmSemiconductor/Linux-Kernel-sensor-Drivers/tree/master/Sensors/RPR0521) -->
-* BM1390 pressure senosr. Fully upstream -  [BM1390](Sensors/BM1390)<!-- [BM1390](https://github.com/RohmSemiconductor/Linux-Kernel-sensor-Drivers/tree/master/Sensors/BM1390) -->
-* BU27034ANUC Ambient Light Sensor. Fully upstream - [BU27034](Sensors/BU27034)
-* BU27034NUC Ambient Light Sensor. Obsoleted -  [BU27034](Sensors/BU27034)<!-- [BU27034](https://github.com/RohmSemiconductor/Linux-Kernel-Sensor-Drivers/tree/master/Sensors/BU27034) -->
-* BU27008 RGBC. Obsoleted -  [BU27008](Sensors/BU27008)<!-- [BU27008](https://github.com/RohmSemiconductor/Linux-Kernel-Sensor-Drivers/tree/master/Sensors/BU27008) -->
-* BU27010 RGBC/IR Obsoleted -  [BU27010](Sensors/BU27010)<!-- [BU27010](https://github.com/RohmSemiconductor/Linux-Kernel-Sensor-Drivers/tree/master/Sensors/BU27010) -->
+
+| Sensor                               | Type                     | Status           |
+|--------------------------------------|--------------------------|------------------|
+| [BU27034ANUC](Sensors/BU27034)       | Ambient Light Sensor     | Fully upstream   |
+| [BM1390](Sensors/BM1390)             | Pressure sensor          | Fully upstream   |
+| [KX022ACR-Z](Sensors/KX022A)         | Accelerometer            | Fully upstream   |
+| [KX132ACR-LBZ](Sensors/KX132ACR-LBZ) | Accelerometer            | Fully upstream   |
+| [KX134ACR-LBZ](Sensors/KX134ACR-LBZ) | Accelerometer            | Being upstreamed |
+| [KX134ACR-LBZ](Sensors/RPR0521)      | Accelerometer            | Being upstreamed |
+| [KX134-1211](Sensors/KX134-1211)     | Accelerometer            | Being upstreamed |
+| [RPR0521](Sensors/RPR0521)           | Ambient light/proximity  | Fully upstream   |
+| [~~BU27034NUC~~](Sensors/BU27034)    | ~~Ambient Light Sensor~~ | Obsolete         |
+| [~~BU27008~~](Sensors/BU27008)       | ~~RGBC Sensor~~          | Obsolete         |
+| [~~BU27010~~](Sensors/BU27010)       | ~~RGBC/IR+ Sensor~~      | Obsolete         |
 
 ### Upstreamed by others
-* KX132-1211 accelerometer - <!-- [KX132-1211](https://github.com/RohmSemiconductor/Linux-Kernel-sensor-Drivers/tree/master/Sensors/KX132-1211) --> [KX132-1211](Sensors/KX132-1211)
-* KXCJK-1013 Accelerometer - <!-- [KXCJK-1013](https://github.com/RohmSemiconductor/Linux-Kernel-sensor-Drivers/tree/master/Sensors/KXCJK-1013) --> [KXCJK-1013](Sensors/KXCJK-1013)
-* KXSD9 Accelerometer - <!-- [KXSD9](https://github.com/RohmSemiconductor/Linux-Kernel-sensor-Drivers/tree/master/Sensors/KXSD9) --> [KXSD9](Sensors/KXSD9)
-* BH1710 Ambient light sensor - <!-- [BH1710](https://github.com/RohmSemiconductor/Linux-Kernel-sensor-Drivers/tree/master/Sensors/BH17XX) --> [BH1710](Sensors/BH17XX)
-* BH1715 Ambient light sensor - <!-- [BH1715](https://github.com/RohmSemiconductor/Linux-Kernel-sensor-Drivers/tree/master/Sensors/BH17XX) --> [BH1715](Sensors/BH17XX)
-* BH1721 Ambient light sensor - <!-- [BH1721](https://github.com/RohmSemiconductor/Linux-Kernel-sensor-Drivers/tree/master/Sensors/BH17XX) --> [BH1721](Sensors/BH17XX)
-* BH1750 Ambient light sensor - <!-- [BH1750](https://github.com/RohmSemiconductor/Linux-Kernel-sensor-Drivers/tree/master/Sensors/BH17XX) --> [BH1750](Sensors/BH17XX)
-* BH1751 Ambient light sensor - <!-- [BH1751](https://github.com/RohmSemiconductor/Linux-Kernel-sensor-Drivers/tree/master/Sensors/BH17XX) --> [BH1751](Sensors/BH17XX)
-* BH1745 Colour sensor
+* [BH1710](Sensors/BH17XX) Ambient light sensor
+* [BH1715](Sensors/BH17XX) Ambient light sensor
+* [BH1721](Sensors/BH17XX) Ambient light sensor
+* [BH1750](Sensors/BH17XX) Ambient light sensor
+* [BH1745](Sensors/BH1745) RGBC Colour sensor
+* [BH1751](Sensors/BH17XX) Ambient light sensor
+* [KX132-1211](Sensors/KX132-1211) Accelerometer
+* [KXCJK-1013](Sensors/KXCJK-1013) Accelerometer
+* [KXSD9](Sensors/KXSD9) Accelerometer
 
 ### Input drivers (not upstream)
 Please see the [ROHM/Kionix input drivers](https://github.com/RohmSemiconductor/Linux-Kernel-Input-Drivers) for:
+* BH1749 color sensor
+* BH1792GLC optical sensor for heart rate monitor
+* KMX62 accelerometer + magnetometer
 * KX112 accelerometer
 * KX122 accelerometer
 * KX126 accelerometer + pedometer
-* KMX62 accelerometer + magnetometer
-* BH1792GLC optical sensor for heart rate monitor
-* BH1749 color sensor
-
 
 ## Upstream driver questions
 If you have questions related to the Linux community drivers - please
