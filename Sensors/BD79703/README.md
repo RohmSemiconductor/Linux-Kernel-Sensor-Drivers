@@ -5,7 +5,7 @@ sensorname: BD79703
 compatible: rohm,bd79703
 devicetype: dac
 spifreq: 30000000
-dtsupply: [vcc vfs]
+dtsupply: [vcc, vfs]
 expectupstreamed: v6.15
 patchlink: https://lore.kernel.org/lkml/cover.1734608215.git.mazziesaccount@gmail.com/ 
 issuelink: https://github.com/RohmSemiconductor/Linux-Kernel-Sensor-Drivers/issues?q=is%3Aissue+repo%3ALinux-Kernel-Sensor-Drivers+BD79703+in%3Atitle
@@ -21,8 +21,8 @@ The ROHM BD79703 DAC is a 6-channel, 8-bit DAC which can be controlled over SPI.
 
 ## Linux Driver:
 
-### Source code:
 {% include source_upstream_status_new.md %}
+The driver supports setting the output for each of the channels individually.
 
 {% include subsys_iio.md %}
 
