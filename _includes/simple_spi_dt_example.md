@@ -15,7 +15,7 @@
         spi-max-frequency = <{{ page.spifreq }}>;
 {%- endif %}
 {%- if page.dtsupply %}
-    {%- for s in page.dtsupply %}
+    {% for s in page.dtsupply -%}
         {{ s }}-supply = <&{{ s }}>;
     {% endfor -%}
 {%- endif %}
