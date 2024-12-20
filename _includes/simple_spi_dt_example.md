@@ -17,7 +17,7 @@
 {%- if page.dtsupply -%}
     {%- for s in page.dtsupply %}
         {{ s }}-supply = <&{{ s }}>;
-    {% endfor -%}
+    {%- endfor -%}
 {%- endif -%}
 {%- if page.dtintparent %}
         interrupt-parent =  {{ page.dtintparent }};
