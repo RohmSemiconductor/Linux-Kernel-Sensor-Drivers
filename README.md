@@ -8,19 +8,20 @@ and attempt to upstream the Linux drivers for our components.
 
 ### Upstreamed by ROHM
 
-| Sensor                               | Type                     | Status           |
-|--------------------------------------|--------------------------|------------------|
-| [BU27034ANUC](Sensors/BU27034)       | Ambient Light Sensor     | Fully upstream   |
-| [BM1390](Sensors/BM1390)             | Pressure sensor          | Fully upstream   |
-| [KX022ACR-Z](Sensors/KX022A)         | Accelerometer            | Fully upstream   |
-| [KX132ACR-LBZ](Sensors/KX132ACR-LBZ) | Accelerometer            | Fully upstream   |
-| [KX134ACR-LBZ](Sensors/KX134ACR-LBZ) | Accelerometer            | Being upstreamed |
-| [KX134ACR-LBZ](Sensors/RPR0521)      | Accelerometer            | Being upstreamed |
-| [KX134-1211](Sensors/KX134-1211)     | Accelerometer            | Being upstreamed |
-| [RPR0521](Sensors/RPR0521)           | Ambient light/proximity  | Fully upstream   |
-| [~~BU27034NUC~~](Sensors/BU27034)    | ~~Ambient Light Sensor~~ | Obsolete         |
-| [~~BU27008~~](Sensors/BU27008)       | ~~RGBC Sensor~~          | Obsolete         |
-| [~~BU27010~~](Sensors/BU27010)       | ~~RGBC/IR+ Sensor~~      | Obsolete         |
+| Sensor                               | Type                        | Status           |
+|--------------------------------------|-----------------------------|------------------|
+| [BD79703](Sensors/BD79703)           | Digital to Analog Converter | Being upstreamed |
+| [BM1390](Sensors/BM1390)             | Pressure sensor             | Fully upstream   |
+| [BU27034ANUC](Sensors/BU27034)       | Ambient Light Sensor        | Fully upstream   |
+| [KX022ACR-Z](Sensors/KX022A)         | Accelerometer               | Fully upstream   |
+| [KX132ACR-LBZ](Sensors/KX132ACR-LBZ) | Accelerometer               | Fully upstream   |
+| [KX134ACR-LBZ](Sensors/KX134ACR-LBZ) | Accelerometer               | Being upstreamed |
+| [KX134ACR-LBZ](Sensors/RPR0521)      | Accelerometer               | Fully upstream   |
+| [KX134-1211](Sensors/KX134-1211)     | Accelerometer               | Being upstreamed |
+| [RPR0521](Sensors/RPR0521)           | Ambient light/proximity     | Fully upstream   |
+| [~~BU27034NUC~~](Sensors/BU27034)    | ~~Ambient Light Sensor~~    | Obsolete         |
+| [~~BU27008~~](Sensors/BU27008)       | ~~RGBC Sensor~~             | Obsolete         |
+| [~~BU27010~~](Sensors/BU27010)       | ~~RGBC/IR+ Sensor~~         | Obsolete         |
 
 ### Upstreamed by others
 * [BH1710](Sensors/BH17XX) Ambient light sensor
