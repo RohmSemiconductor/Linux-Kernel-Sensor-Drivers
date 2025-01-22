@@ -582,6 +582,14 @@ static irqreturn_t bd79124_event_handler(int irq, void *priv)
 		}
 	}
 
+	ret = regmap_write(d->map, BD79124_REG_EVENT_FLAG_HI, i_hi);
+	if (ret)
+		return IRQ_NONE;
+
+	ret = regmap_write(d->map, BD79124_REG_EVENT_FLAG_LO, i_lo);
+	if (ret)
+		return IRQ_NONE;
+
 	return IRQ_HANDLED;
 }
 
