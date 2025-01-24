@@ -16,7 +16,6 @@ and attempt to upstream the Linux drivers for our components.
 | [KX022ACR-Z](Sensors/KX022A)         | Accelerometer               | Fully upstream   |
 | [KX132ACR-LBZ](Sensors/KX132ACR-LBZ) | Accelerometer               | Fully upstream   |
 | [KX134ACR-LBZ](Sensors/KX134ACR-LBZ) | Accelerometer               | Being upstreamed |
-| [KX134ACR-LBZ](Sensors/RPR0521)      | Accelerometer               | Fully upstream   |
 | [KX134-1211](Sensors/KX134-1211)     | Accelerometer               | Being upstreamed |
 | [RPR0521](Sensors/RPR0521)           | Ambient light/proximity     | Fully upstream   |
 | [~~BU27034NUC~~](Sensors/BU27034)    | ~~Ambient Light Sensor~~    | Obsolete         |
