@@ -1,4 +1,4 @@
-# Linux sensor drivers for ROHM / Kionix sensors
+# Linux sensor drivers for ROHM / Kionix&trade; sensors
 
 ROHM has been collaborating with the Linux kernel community and sees
 the value of open-source. Hence we want to contribute to community
@@ -34,7 +34,7 @@ and attempt to upstream the Linux drivers for our components.
 * [KXSD9](Sensors/KXSD9) Accelerometer
 
 ### Input drivers (not upstream)
-Please see the [ROHM/Kionix input drivers](https://github.com/RohmSemiconductor/Linux-Kernel-Input-Drivers) for:
+Please see the [ROHM/Kionix&trade; input drivers](https://github.com/RohmSemiconductor/Linux-Kernel-Input-Drivers) for:
 * BH1749 color sensor
 * BH1792GLC optical sensor for heart rate monitor
 * KMX62 accelerometer + magnetometer
@@ -53,8 +53,8 @@ get the best possible contacts via the [MAINTAINERS](https://git.kernel.org/pub/
 
 ## Contents of these repositories
 
-- [ROHM/Kionix IIO drivers](https://github.com/RohmSemiconductor/Linux-Kernel-sensor-Drivers)
-- [ROHM/Kionix input drivers](https://github.com/RohmSemiconductor/Linux-Kernel-Input-Drivers)
+- [ROHM/Kionix&trade; IIO drivers](https://github.com/RohmSemiconductor/Linux-Kernel-sensor-Drivers)
+- [ROHM/Kionix&trade; input drivers](https://github.com/RohmSemiconductor/Linux-Kernel-Input-Drivers)
 
 We do also occasionally develop something which does not perfectly fit into
 the upstream Linux frameworks or policies. This content may include something
@@ -70,7 +70,7 @@ maintainig them ourself and having no community support. This means a few of our
 sensor drivers are not in the upstream kernel but are hosted in our own
 repositories.
 
-So, this is the place to look for ROHM/Kionix Sensor IC specific Linux drivers/
+So, this is the place to look for ROHM/Kionix&trade; Sensor IC specific Linux drivers/
 extensions. Please be aware that these drivers / extensions are provided as
 reference implementation only, without warranty, and they may not be actively
 developed/maintained.
