@@ -8,9 +8,9 @@ downstreamlink: https://github.com/RohmSemiconductor/Linux-Kernel-Sensor-Drivers
 issuelink: https://github.com/RohmSemiconductor/Linux-Kernel-Sensor-Drivers/issues?q=is%3Aissue+repo%3ALinux-Kernel-Sensor-Drivers+KX022A+in%3Atitle
 ---
 
-# ROHM/Kionix 3-Axis Accelerometer IC KX134-1211
+# ROHM/Kionix&trade; 3-Axis Accelerometer IC KX134-1211
 
-KX134-1211 is a 3-axis accelerometer from ROHM/Kionix. The KX134-1211 is similar to the [KX132-1211](../KX132-1211) but has different g-ranges. KX134-1211 supports g-ranges +/-8g, +/-16g, +/-32g and +/-64g.
+KX134-1211 is a 3-axis accelerometer from ROHM/Kionix&trade;. The KX134-1211 is similar to the [KX132-1211](../KX132-1211) but has different g-ranges. KX134-1211 supports g-ranges &plusmn;8g, &plusmn;16g, &plusmn;32g and &plusmn;64g.
 
 ## Resources
 - [Reference manuual](https://fscdn.rohm.com/kionix/en/document/KX134-1211-Technical-Reference-Manual-Rev-5.0.pdf)
