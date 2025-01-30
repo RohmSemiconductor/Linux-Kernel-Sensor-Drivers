@@ -6,7 +6,7 @@ compatible: rohm,bd79703
 devicetype: dac
 spifreq: 30000000
 dtsupply: [vcc, vfs]
-expectupstreamed: v6.15
+expectupstreamed: v6.14
 patchlink: https://lore.kernel.org/lkml/cover.1734608215.git.mazziesaccount@gmail.com/ 
 issuelink: https://github.com/RohmSemiconductor/Linux-Kernel-Sensor-Drivers/issues?q=is%3Aissue+repo%3ALinux-Kernel-Sensor-Drivers+BD79703+in%3Atitle
 ---
