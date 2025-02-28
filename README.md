@@ -10,13 +10,15 @@ and attempt to upstream the Linux drivers for our components.
 
 | Sensor                               | Type                        | Status           |
 |--------------------------------------|-----------------------------|------------------|
-| [BD79703](Sensors/BD79703)           | Digital to Analog Converter | Being upstreamed |
+| [BD79104](Sensors/BD79104)           | Analog to Digital Converter | Under development|
+| [BD79124](Sensors/BD79124)           | Analog to Digital Converter | Being upstreamed |
+| [BD79703](Sensors/BD79703)           | Digital to Analog Converter | Fully upstream   |
 | [BM1390](Sensors/BM1390)             | Pressure sensor             | Fully upstream   |
 | [BU27034ANUC](Sensors/BU27034)       | Ambient Light Sensor        | Fully upstream   |
 | [KX022ACR-Z](Sensors/KX022A)         | Accelerometer               | Fully upstream   |
 | [KX132ACR-LBZ](Sensors/KX132ACR-LBZ) | Accelerometer               | Fully upstream   |
-| [KX134ACR-LBZ](Sensors/KX134ACR-LBZ) | Accelerometer               | Being upstreamed |
-| [KX134-1211](Sensors/KX134-1211)     | Accelerometer               | Being upstreamed |
+| [KX134ACR-LBZ](Sensors/KX134ACR-LBZ) | Accelerometer               | Fully upstream   |
+| [KX134-1211](Sensors/KX134-1211)     | Accelerometer               | Fully upstream   |
 | [RPR0521](Sensors/RPR0521)           | Ambient light/proximity     | Fully upstream   |
 | [~~BU27034NUC~~](Sensors/BU27034)    | ~~Ambient Light Sensor~~    | Obsolete         |
 | [~~BU27008~~](Sensors/BU27008)       | ~~RGBC Sensor~~             | Obsolete         |
