@@ -53,6 +53,13 @@ mean ROHM is out of the game - we have our personnel in Linux driver reviewers/
 maintainers - but we don't "own" these components or frameworks anymore. You
 get the best possible contacts via the [MAINTAINERS](https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/MAINTAINERS) file and [get_maintainer.pl](https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/scripts/get_maintainer.pl) script.
 
+## Upstream driver testing
+A few automated tests are being ran for some of the upstreamed ROHM Sensor drivers. The tests are ran for tags created from the:
+- Torvald's main Linux repository
+- Linux-Next integration testing repository
+- Linux stable repository
+The test results are upload to the [Sensor](https://github.com/RohmSemiconductor/rohm-linux-test-results/tree/Sensor) of the rohm-linux-test-results repository.
+
 ## Contents of these repositories
 
 - [ROHM/Kionix&trade; IIO drivers](https://github.com/RohmSemiconductor/Linux-Kernel-sensor-Drivers)
