@@ -8,8 +8,6 @@ spifreq: 20000000
 dtsupply: [vdd, iovdd]
 patchlink: https://lore.kernel.org/all/cover.1743573284.git.mazziesaccount@gmail.com/
 expectupstreamed: v6.16
-downstreamlink: https://github.com/RohmSemiconductor/Linux-Kernel-Sensor-Drivers/tree/bd79104-adc
-downstreamunstable: true
 issuelink: https://github.com/RohmSemiconductor/Linux-Kernel-Sensor-Drivers/issues?q=is%3Aissue+repo%3ALinux-Kernel-Sensor-Drivers+BD79104+in%3Atitle
 ---
 
