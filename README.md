@@ -61,7 +61,7 @@ A few automated tests are being ran for some of the upstreamed ROHM Sensor drive
 - Torvald's main Linux repository
 - Linux-Next integration testing repository
 - Linux stable repository
-The test results are upload to the [Sensor](https://github.com/RohmSemiconductor/rohm-linux-test-results/tree/Sensor) of the rohm-linux-test-results repository.
+The test results are upload to the [Sensor branch](https://github.com/RohmSemiconductor/rohm-linux-test-results/tree/Sensor) of the rohm-linux-test-results repository.
 
 ## Contents of these repositories
 
