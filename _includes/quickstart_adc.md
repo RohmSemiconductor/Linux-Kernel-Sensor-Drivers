@@ -7,9 +7,8 @@ Below is an example of simple data capture from an ADC, obtained using the IIO.
 1: Find the right IIO device based on the device name.
 
 ```
-root@arm:/home/debian# grep -RIn {{ page.iiodevname }} /sys/bus/iio/devices/*/name
-/sys/bus/iio/devices/iio:device0/name:1:{{ page.iiodevname }}
-...
+root@arm:/home/debian# grep -RIl {{ page.iiodevname }} /sys/bus/iio/devices/*/name
+/sys/bus/iio/devices/iio:device0/name
 root@arm:/home/debian#
 ```
 In the example above:
