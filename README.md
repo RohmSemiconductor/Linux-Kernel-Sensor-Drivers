@@ -12,6 +12,7 @@ and attempt to upstream the Linux drivers for our components.
 |--------------------------------------|-----------------------------|------------------|
 | [BD79104](Sensors/BD79104)           | Analog to Digital Converter | Being upstreamed |
 | [BD79124](Sensors/BD79124)           | Analog to Digital Converter | Being upstreamed |
+| [BU79100G](Sensors/BU79100G)         | Analog to Digital Converter | Being upstreamed |
 | [BD79700](Sensors/BD79700)           | Digital to Analog Converter | Being upstreamed |
 | [BD79701](Sensors/BD79701)           | Digital to Analog Converter | Being upstreamed |
 | [BD79702](Sensors/BD79702)           | Digital to Analog Converter | Being upstreamed |
