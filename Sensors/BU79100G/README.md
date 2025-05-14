@@ -22,6 +22,8 @@ The ROHM BU79100G ADC is a single-channel, 12-bit ADC which can be read over SPI
 
 ## Linux Driver:
 
+### Source Code:
+
 The ROHM BU79100G can be operated using the upstream ad7476 driver. Support for BU79100G like devices should be found from the Linux v5.1-rc1 onwards.
 
 NOTE: The device-tree must use ti,ads7866 as a fallback compatible for the BU79100G because some of the device drivers may use ti,ads7866 code-branch to avoid code duplication. Please, see the device-tree example below for the details.
