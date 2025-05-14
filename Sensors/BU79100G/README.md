@@ -2,7 +2,7 @@
 permalink: /Sensors/BU79100G/
 markdownhint: If you're reading the raw-text, you can find the included stuff from the _includes folder. Or, you can head to the pages in https://rohmsemiconductor.github.io/Linux-Kernel-Sensor-Drivers/
 sensorname: BU79100G
-iiodevname: ads7866
+iiodevname: bd79100
 compatible: rohm,bu79100g
 devicetype: adc
 spifreq: 20000000
@@ -24,9 +24,11 @@ The ROHM BU79100G ADC is a single-channel, 12-bit ADC which can be read over SPI
 
 ### Source Code:
 
-The ROHM BU79100G can be operated using the upstream ad7476 driver. Support for BU79100G like devices should be found from the Linux v5.1-rc1 onwards.
+The ROHM BU79100G can be operated using the upstream ad7476 driver. Support for BU79100G like devices should be found from the Linux v5.1-rc1 onwards, but the compatible string for the BU79100G is not supported there.
 
-NOTE: The device-tree must use ti,ads7866 as a fallback compatible for the BU79100G because some of the device drivers may use ti,ads7866 code-branch to avoid code duplication. Please, see the device-tree example below for the details.
+See [this patch]({{ page.patchlink }}) for the BU79100G support.
+
+NOTE: The device-tree should use ti,ads7866 as a fallback compatible for the BU79100G because some of the device drivers may use ti,ads7866 code-branch to avoid code duplication. Please, see the device-tree example below for the details.
 
 The driver supports reading the ADC channels via the Linux IIO subsystem.
 
