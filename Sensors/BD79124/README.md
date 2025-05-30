@@ -13,7 +13,7 @@ issuelink: https://github.com/RohmSemiconductor/Linux-Kernel-Sensor-Drivers/issu
 
 # ROHM BD79124 Analog to Digital Converter (ADC)
 
-The ROHM BD79124 ADC is a 8-channel, 12-bit ADC which can be controlled over I2C. It supports voltage monitoring and voltage out-of-window interrupts. In addition to the ADC the ADC input pins can be configured to be used as general purpose outputs.
+The ROHM BD79124 ADC is a 8-channel, 12-bit ADC which is controlled over I2C. It supports voltage monitoring and voltage out-of-window interrupts. In addition to the ADC the ADC input pins can be configured to be used as general purpose outputs.
 
 ## Resources
 - [Datasheet](https://fscdn.rohm.com/en/products/databook/datasheet/ic/data_converter/dac/bd79124muf-c-e.pdf)

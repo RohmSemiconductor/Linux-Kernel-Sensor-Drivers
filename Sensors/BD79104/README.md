@@ -13,7 +13,7 @@ issuelink: https://github.com/RohmSemiconductor/Linux-Kernel-Sensor-Drivers/issu
 
 # ROHM BD79104 Analog to Digital Converter (ADC)
 
-The ROHM BD79104 ADC is a 8-channel, 12-bit ADC which can be controlled over SPI.
+The ROHM BD79104 ADC is a 8-channel, 12-bit ADC which is controlled over SPI.
 
 ## Resources
 - [Product page](https://www.rohm.com/products/data-converter/a-d-converters/12bit-a-d/bd79104fv-la-product)
