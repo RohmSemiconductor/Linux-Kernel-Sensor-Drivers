@@ -7,7 +7,7 @@ compatible: rohm,bu79100g
 devicetype: adc
 spifreq: 20000000
 dtsupply: [vcc]
-patchlink: https://lore.kernel.org/all/cover.1747123883.git.mazziesaccount@gmail.com/
+patchlink: https://lore.kernel.org/all/aDk2qNE9LTVnfAFM@mva-rohm/
 expectupstreamed: v6.17
 issuelink: https://github.com/RohmSemiconductor/Linux-Kernel-Sensor-Drivers/issues?q=is%3Aissue+repo%3ALinux-Kernel-Sensor-Drivers+BU79100G+in%3Atitle
 ---
@@ -28,7 +28,7 @@ The ROHM BU79100G can be operated using the upstream ad7476 driver. Support for 
 
 See [this patch]({{ page.patchlink }}) for the BU79100G support.
 
-NOTE: The device-tree should use ti,ads7866 as a fallback compatible for the BU79100G because some of the device drivers may use ti,ads7866 code-branch to avoid code duplication. Please, see the device-tree example below for the details.
+NOTE: Ideally the device-tree should use ti,ads7866 as a fallback compatible for the BU79100G, because some of the device drivers may use ti,ads7866 code-branch to avoid code duplication. Due to historical reasons the above ID patch is still needed on Linux. Please, see the device-tree example below for the details.
 
 The driver supports reading the ADC channels via the Linux IIO subsystem.
 
