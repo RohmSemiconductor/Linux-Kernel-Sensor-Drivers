@@ -8,7 +8,7 @@ devicetype: dac
 spifreq: 30000000
 dtsupply: [vcc]
 patchlink: https://lore.kernel.org/all/cover.1743576022.git.mazziesaccount@gmail.com/
-expectupstreamed: v6.16
+upstreamed: v6.16-rc1
 datasheet: https://fscdn.rohm.com/en/products/databook/datasheet/ic/data_converter/dac/bd79700fvm-lb_bd79701fvm-lb-e.pdf
 productpage: https://www.rohm.com/products/data-converter/d-a-converters/8bit-d-a/bd79701fvm-lb-product
 upstreamlink: https://web.git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/drivers/iio/dac/rohm-bd79703.c

@@ -6,8 +6,8 @@ compatible: rohm,bd79104
 devicetype: adc
 spifreq: 20000000
 dtsupply: [vdd, iovdd]
-patchlink: https://lore.kernel.org/all/cover.1743573284.git.mazziesaccount@gmail.com/
-expectupstreamed: v6.16
+upstreamlink: https://web.git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/drivers/iio/adc/ti-adc128s052.c
+upstreamed: v6.16-rc1
 issuelink: https://github.com/RohmSemiconductor/Linux-Kernel-Sensor-Drivers/issues?q=is%3Aissue+repo%3ALinux-Kernel-Sensor-Drivers+BD79104+in%3Atitle
 ---
 
