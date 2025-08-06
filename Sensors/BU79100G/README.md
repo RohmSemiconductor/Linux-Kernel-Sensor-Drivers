@@ -8,7 +8,8 @@ devicetype: adc
 spifreq: 20000000
 dtsupply: [vcc]
 patchlink: https://lore.kernel.org/all/aDk2qNE9LTVnfAFM@mva-rohm/
-expectupstreamed: v6.17
+upstreamlink: https://web.git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/drivers/iio/adc/ad7476.c
+upstreamed: v6.17-rc1
 issuelink: https://github.com/RohmSemiconductor/Linux-Kernel-Sensor-Drivers/issues?q=is%3Aissue+repo%3ALinux-Kernel-Sensor-Drivers+BU79100G+in%3Atitle
 ---
 
@@ -24,9 +25,7 @@ The ROHM BU79100G ADC is a single-channel, 12-bit ADC which can be read over SPI
 
 ### Source Code:
 
-The ROHM BU79100G can be operated using the upstream ad7476 driver. Support for BU79100G like devices should be found from the Linux v5.1-rc1 onwards, but the compatible string for the BU79100G is not supported there.
-
-See [this patch]({{ page.patchlink }}) for the BU79100G support.
+The ROHM BU79100G can be operated using the upstream ad7476 driver. Support for BU79100G like devices should be found from the Linux v5.1-rc1 onwards, but the compatible string for the BU79100G is added to the Linux {{ page.upstreamed }} 
 
 NOTE: Ideally the device-tree should use ti,ads7866 as a fallback compatible for the BU79100G, because some of the device drivers may use ti,ads7866 code-branch to avoid code duplication. Due to historical reasons the above ID patch is still needed on Linux. Please, see the device-tree example below for the details.
 
@@ -53,5 +52,5 @@ Please note the compatible:
 ```
 compatible = "rohm,bd79100g", "ti,ads7866";
 ```
-Using the ti,ads7866 as a fallback ensures that the sensor is working even when driver is optimized to avoid code duplication. (Device-tree validation is failing until [this patch](https://lore.kernel.org/all/4907a096eee1f54afae834213cf721b551382d4e.1747203712.git.mazziesaccount@gmail.com/) gets merged).
+Using the ti,ads7866 as a fallback ensures that the sensor is working even when driver is optimized to avoid code duplication. (Device-tree validation was failing until [this patch](https://lore.kernel.org/all/4907a096eee1f54afae834213cf721b551382d4e.1747203712.git.mazziesaccount@gmail.com/) was merged).
 
