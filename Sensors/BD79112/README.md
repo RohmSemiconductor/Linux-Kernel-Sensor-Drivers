@@ -15,9 +15,7 @@ issuelink: https://github.com/RohmSemiconductor/Linux-Kernel-Sensor-Drivers/issu
 
 The ROHM BD79112 ADC is a 32-channel, 12-bit ADC which is controlled over SPI. The ADC inputs can also be used as GPIO.
 
-## Resources
-- Product page: TBD
-- Datasheet: TBD
+{% include resources.md %}
 
 ## Linux Driver:
 
