@@ -9,6 +9,8 @@ spifreq: 20000000
 dtsupply: [vcc]
 patchlink: https://lore.kernel.org/all/aDk2qNE9LTVnfAFM@mva-rohm/
 upstreamlink: https://web.git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/drivers/iio/adc/ad7476.c
+datasheet: https://fscdn.rohm.com/en/products/databook/datasheet/ic/data_converter/dac/bu79100g-la-e.pdf
+productpage: https://www.rohm.com/products/data-converter/a-d-converters/12bit-a-d/bu79100g-la-product#productDetail
 upstreamed: v6.17-rc1
 issuelink: https://github.com/RohmSemiconductor/Linux-Kernel-Sensor-Drivers/issues?q=is%3Aissue+repo%3ALinux-Kernel-Sensor-Drivers+BU79100G+in%3Atitle
 ---
@@ -17,9 +19,7 @@ issuelink: https://github.com/RohmSemiconductor/Linux-Kernel-Sensor-Drivers/issu
 
 The ROHM BU79100G ADC is a single-channel, 12-bit ADC which can be read over SPI.
 
-## Resources
-- [Product page](https://www.rohm.com/products/data-converter/a-d-converters/12bit-a-d/bu79100g-la-product#productDetail)
-- [Datasheet](https://fscdn.rohm.com/en/products/databook/datasheet/ic/data_converter/dac/bu79100g-la-e.pdf)
+{% include resources.md %}
 
 ## Linux Driver:
 

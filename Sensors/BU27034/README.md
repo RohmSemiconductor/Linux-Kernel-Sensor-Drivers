@@ -2,6 +2,8 @@
 permalink: /Sensors/BU27034/
 markdownhint: If you're reading the raw-text, you can find the included stuff from the _includes folder. Or you can head to the pages in https://rohmsemiconductor.github.io/Linux-Kernel-Sensor-Drivers/
 bindinglink: https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/Documentation/devicetree/bindings/iio/light/rohm,bu27034anuc.yaml
+datasheet: https://fscdn.rohm.com/en/products/databook/datasheet/ic/sensor/light/bu27034anuc-e.pdf
+productpage: https://www.rohm.com/products/sensors-mems/ambient-light-sensor-ics/digital-16bit-serial-output/bu27034anuc-product
 sensorname: BU27034ANUC
 compatible: rohm,bu27034anuc
 dtsupply: vdd-supply = <&vdd>
@@ -14,8 +16,7 @@ The original BU27034NUC sensor was redesigned. The new sensor is BU27034**A**NUC
 
 The ROHM BU27034ANUC is a digital Ambient Light Sensor IC with I²C bus interface. This IC can be used for obtaining ambient light data for example for adjusting LCD and backlight power of TV and mobile phone. It is capable of detecting a very wide range of illuminance.
 
-## Resources
- - [Data sheet](https://fscdn.rohm.com/en/products/databook/datasheet/ic/sensor/light/bu27034anuc-e.pdf)
+{% include resources.md %}
 
 ## Linux Driver
 
