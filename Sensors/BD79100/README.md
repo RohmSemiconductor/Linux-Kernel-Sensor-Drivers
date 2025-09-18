@@ -15,9 +15,7 @@ issuelink: https://github.com/RohmSemiconductor/Linux-Kernel-Sensor-Drivers/issu
 
 The ROHM BD79100 ADC is a single-channel, 12-bit ADC which is controlled over SPI.
 
-## Resources
-- Product page: TBD
-- Datasheet: TBD
+{% include resources.md %}
 
 ## Linux Driver:
 
