@@ -9,6 +9,7 @@ dtsupply: [vdd, iovdd]
 upstreamlink: https://web.git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/drivers/iio/adc/rohm-bd79124.c
 upstreamed: v6.16-rc1
 patchlink: https://lore.kernel.org/all/cover.1742560649.git.mazziesaccount@gmail.com/
+datasheet: https://fscdn.rohm.com/en/products/databook/datasheet/ic/data_converter/dac/bd79124muf-c-e.pdf 
 issuelink: https://github.com/RohmSemiconductor/Linux-Kernel-Sensor-Drivers/issues?q=is%3Aissue+repo%3ALinux-Kernel-Sensor-Drivers+BD79124+in%3Atitle
 ---
 
@@ -16,8 +17,7 @@ issuelink: https://github.com/RohmSemiconductor/Linux-Kernel-Sensor-Drivers/issu
 
 The ROHM BD79124 ADC is a 8-channel, 12-bit ADC which is controlled over I2C. It supports voltage monitoring and voltage out-of-window interrupts. In addition to the ADC the ADC input pins can be configured to be used as general purpose outputs.
 
-## Resources
-- [Datasheet](https://fscdn.rohm.com/en/products/databook/datasheet/ic/data_converter/dac/bd79124muf-c-e.pdf)
+{% include resources.md %}
 
 ## Linux Driver:
 
