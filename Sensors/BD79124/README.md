@@ -4,7 +4,6 @@ markdownhint: If you're reading the raw-text, you can find the included stuff fr
 sensorname: BD79124
 compatible: rohm,bd79124
 devicetype: adc
-spifreq: 30000000
 dtsupply: [vdd, iovdd]
 upstreamlink: https://web.git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/drivers/iio/adc/rohm-bd79124.c
 upstreamed: v6.16-rc1
