@@ -6,8 +6,8 @@ compatible: rohm,bd79112
 devicetype: adc
 spifreq: 20000000
 dtsupply: [vdd, iovdd]
-patchlink: https://lore.kernel.org/all/20250915-bd79112-v5-0-a74e011a0560@gmail.com/
-expectupstreamed: v6.18
+upstreamlink: https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/drivers/iio/adc/rohm-bd79112.c
+upstreamed: v6.18-rc1
 issuelink: https://github.com/RohmSemiconductor/Linux-Kernel-Sensor-Drivers/issues?q=is%3Aissue+repo%3ALinux-Kernel-Sensor-Drivers+BD79112+in%3Atitle
 ---
 

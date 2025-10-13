@@ -7,8 +7,8 @@ compatible: rohm,bd79105
 devicetype: adc
 spifreq: 66600000
 dtsupply: [vcc, vref, vdrive]
-patchlink: https://lore.kernel.org/all/cover.1754901948.git.mazziesaccount@gmail.com/
-expectupstreamed: v6.18
+upstreamdriverexisted: true
+upstreamed: v6.18-rc1
 issuelink: https://github.com/RohmSemiconductor/Linux-Kernel-Sensor-Drivers/issues?q=is%3Aissue+repo%3ALinux-Kernel-Sensor-Drivers+BD79105+in%3Atitle
 ---
 
