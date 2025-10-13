@@ -2,9 +2,18 @@
 
 {% if page.upstreamed %}
     {%- if page.upstreamlink -%}
-The ROHM Finland SWDC has created a Linux driver in collaboration with the Linux kernel community. Driver is included in the [Upstream Linux]({{ page.upstreamlink }}) from {{ page.upstreamed }} onwards.
+        {%- if page.upstreamdriverexisted -%}
+The ROHM Finland SWDC has added support for the {{ page.sensorname }} in the existing Linux driver, in collaboration with the Linux kernel community. Driver is included in the [Upstream Linux]({{ page.upstreamlink }}) from {{ page.upstreamed }} onwards.
+        {%- else  -%}
+The ROHM Finland SWDC has created a Linux driver, in collaboration with the Linux kernel community. Driver is included in the [Upstream Linux]({{ page.upstreamlink }}) from {{ page.upstreamed }} onwards.
+        {%- endif -%}
     {%- else -%}
-The ROHM Finland SWDC has created a Linux driver in collaboration with the Linux kernel community. Driver is included in the Upstream Linux from {{ page.upstreamed }} onwards.
+        {%- if page.upstreamdriverexisted -%}
+The ROHM Finland SWDC has added support for the {{ page.sensorname }} in the existing Linux driver, in collaboration with the Linux kernel community.
+        {%- else  -%}
+The ROHM Finland SWDC has created a Linux driver in collaboration with the Linux kernel community.
+        {% endif %}
+ Driver is included in the Upstream Linux from {{ page.upstreamed }} onwards.
 
 The Linux kernel can be obtained from:
 
