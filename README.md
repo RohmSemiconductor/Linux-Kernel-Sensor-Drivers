@@ -44,6 +44,7 @@ and attempt to upstream the Linux drivers for our components.
 * [KX132-1211](Sensors/KX132-1211) Accelerometer
 * [KXCJK-1013](Sensors/KXCJK-1013) Accelerometer
 * [KXSD9](Sensors/KXSD9) Accelerometer
+* [BH1730](Sensors/BH1730) Ambient light sensor (Under review)
 
 ### Input drivers (not upstream)
 Please see the [ROHM/Kionix&trade; input drivers](https://github.com/RohmSemiconductor/Linux-Kernel-Input-Drivers) for:
