@@ -1516,14 +1516,16 @@ config RN5T618_ADC
 	  will be called rn5t618-adc.
 
 config ROHM_BD79112
-	tristate "Rohm BD79112 ADC driver"
+	tristate "ADC/GPIO Driver for ROHM BD79112 et al."
 	depends on SPI && GPIOLIB
 	select REGMAP_SPI
 	select IIO_ADC_HELPER
 	help
-	  Say yes here to build support for the ROHM BD79112 ADC. The
-	  ROHM BD79112 is a 12-bit, 32-channel, SAR ADC. Analog inputs
-	  can also be used for GPIO.
+	  Say yes here to build support for the following ROHM SAR ADCs:
+	  - BD79111 (12-bit, 16 channels)
+	  - BD79112 (12-bit, 32 channels)
+
+	  Analog inputs can also be used for GPIO.
 
 config ROHM_BD79124
 	tristate "Rohm BD79124 ADC driver"

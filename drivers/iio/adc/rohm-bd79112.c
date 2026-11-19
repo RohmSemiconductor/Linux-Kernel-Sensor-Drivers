@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: GPL-2.0-only
 /*
- * ROHM ADC driver for BD79112 signal monitoring hub.
+ * ADC/GPIO driver for ROHM BD79112 and similar signal monitoring hubs.
  * Copyright (C) 2025, ROHM Semiconductor.
  *
  * SPI communication derived from ad7923.c and ti-ads7950.c
@@ -24,12 +24,12 @@
 #include <linux/iio/adc-helpers.h>
 #include <linux/iio/iio.h>
 
-#define BD79112_MAX_NUM_CHANNELS 32
-
 struct bd79112_data;
 
 struct bd7911x_chip_data {
+	const char *name;
 	const char * const *chan_names;
+	unsigned int num_max_channels;
 	int (*init_disable_gpios)(struct bd79112_data *data);
 };
 
@@ -377,7 +377,6 @@ static int bd79112_gpio_output(struct gpio_chip *gc, unsigned int offset,
 }
 
 static const struct gpio_chip bd79112_gpio_chip = {
-	.label			= "bd79112-gpio",
 	.get_direction		= bd79112_gpio_dir_get,
 	.direction_input	= bd79112_gpio_input,
 	.direction_output	= bd79112_gpio_output,
@@ -386,24 +385,42 @@ static const struct gpio_chip bd79112_gpio_chip = {
 	.set_multiple		= bd79112_gpio_set_multiple,
 	.init_valid_mask	= bd79112_gpio_init_valid_mask,
 	.can_sleep		= true,
-	.ngpio			= 32,
 	.base			= -1,
 };
 
-static unsigned int bd79112_get_gpio_pins(const struct iio_chan_spec *cs, int num_channels)
+static unsigned int bd79112_get_gpio_pins(const struct iio_chan_spec *cs,
+					  int num_channels, int max_channels)
 {
 	unsigned int i, gpio_channels;
 
 	/*
-	 * Let's initialize the mux config to say that all 32 channels are
+	 * Let's initialize the mux config to say that all channels are
 	 * GPIOs. Then we can just loop through the iio_chan_spec and clear the
 	 * bits for found ADC channels.
 	 */
-	gpio_channels = GENMASK(31, 0);
+	gpio_channels = GENMASK(max_channels - 1, 0);
 	for (i = 0; i < num_channels; i++)
 		gpio_channels &= ~BIT(cs[i].channel);
 
 	return gpio_channels;
+}
+
+/* The BD79111 only has the registers for pins 0 - 15 */
+static int bd79111_disable_gpios(struct bd79112_data *data)
+{
+	static const unsigned int regs[] = {
+		BD79112_REG_GPI_EN_A8_A15, BD79112_REG_GPI_EN_A0_A7,
+		BD79112_REG_GPO_EN_A8_A15, BD79112_REG_GPO_EN_A0_A7,
+	};
+	int ret;
+
+	for (unsigned int i = 0; i < ARRAY_SIZE(regs); i++) {
+		ret = regmap_write(data->map, regs[i], 0);
+		if (ret)
+			return ret;
+	}
+
+	return 0;
 }
 
 static int bd79112_disable_gpios(struct bd79112_data *data)
@@ -419,7 +436,15 @@ static int bd79112_disable_gpios(struct bd79112_data *data)
 	return 0;
 }
 
-/* ADC channels as named in the data-sheet */
+/* The BD79111 channel names as in the data-sheet */
+static const char * const bd79111_chan_names[] = {
+	"AGIO0", "AGIO1", "AGIO2", "AGIO3",		/* 0 - 3 */
+	"AGIO4", "AGIO5", "AGIO6", "AGIO7",		/* 4 - 7 */
+	"AGIO8", "AGIO9", "AGIO10", "AGIO11",		/* 8 - 11 */
+	"AGIO12", "AGIO13", "AGIO14", "AGIO15",		/* 12 - 15 */
+};
+
+/* The BD79112 channel name as in the data-sheet */
 static const char * const bd79112_chan_names[] = {
 	"AGIO0A", "AGIO1A", "AGIO2A", "AGIO3A",		/* 0 - 3 */
 	"AGIO4A", "AGIO5A", "AGIO6A", "AGIO7A",		/* 4 - 7 */
@@ -431,8 +456,17 @@ static const char * const bd79112_chan_names[] = {
 	"AGIO12B", "AGIO13B", "AGIO14B", "AGIO15B",	/* 28 - 31 */
 };
 
+static const struct bd7911x_chip_data bd79111_chip_data = {
+	.name = "bd79111",
+	.chan_names = bd79111_chan_names,
+	.num_max_channels = 16,
+	.init_disable_gpios = bd79111_disable_gpios,
+};
+
 static const struct bd7911x_chip_data bd79112_chip_data = {
+	.name = "bd79112",
 	.chan_names = bd79112_chan_names,
+	.num_max_channels = 32,
 	.init_disable_gpios = bd79112_disable_gpios,
 };
 
@@ -492,7 +526,7 @@ static int bd79112_probe(struct spi_device *spi)
 				     "Failed to optimize SPI write message\n");
 
 	ret = devm_iio_adc_device_alloc_chaninfo_se(dev, &bd79112_chan_template,
-						    BD79112_MAX_NUM_CHANNELS - 1,
+						    data->cd->num_max_channels - 1,
 						    &cs);
 
 	/* Register all pins as GPIOs if there are no ADC channels */
@@ -509,7 +543,7 @@ static int bd79112_probe(struct spi_device *spi)
 		cs[i].datasheet_name = data->cd->chan_names[cs[i].channel];
 
 	iio_dev->info = &bd79112_info;
-	iio_dev->name = "bd79112";
+	iio_dev->name = data->cd->name;
 	iio_dev->modes = INDIO_DIRECT_MODE;
 
 	/*
@@ -528,14 +562,15 @@ static int bd79112_probe(struct spi_device *spi)
 
 register_gpios:
 	gpio_pins = bd79112_get_gpio_pins(iio_dev->channels,
-					  iio_dev->num_channels);
+					  iio_dev->num_channels,
+					  data->cd->num_max_channels);
 
 	/* If all channels are reserved for ADC, then we're done. */
 	if (!gpio_pins)
 		return 0;
 
 	/* Default all the GPIO pins to GPI */
-	for_each_set_bit(pin, &gpio_pins, BD79112_MAX_NUM_CHANNELS) {
+	for_each_set_bit(pin, &gpio_pins, data->cd->num_max_channels) {
 		ret = bd79112_gpio_dir_set(data, pin, GPIO_LINE_DIRECTION_IN);
 		if (ret)
 			return dev_err_probe(dev, ret,
@@ -545,17 +580,23 @@ register_gpios:
 	data->gpio_valid_mask = gpio_pins;
 	data->gc = bd79112_gpio_chip;
 	data->gc.parent = dev;
+	data->gc.ngpio = data->cd->num_max_channels;
+	data->gc.label = devm_kasprintf(dev, GFP_KERNEL, "%s-gpio", data->cd->name);
+	if (!data->gc.label)
+		return -ENOMEM;
 
 	return devm_gpiochip_add_data(dev, &data->gc, data);
 }
 
 static const struct of_device_id bd79112_of_match[] = {
+	{ .compatible = "rohm,bd79111", .data = &bd79111_chip_data },
 	{ .compatible = "rohm,bd79112", .data = &bd79112_chip_data },
 	{ }
 };
 MODULE_DEVICE_TABLE(of, bd79112_of_match);
 
 static const struct spi_device_id bd79112_id[] = {
+	{ .name = "bd79111", .driver_data = (kernel_ulong_t)&bd79111_chip_data },
 	{ .name = "bd79112", .driver_data = (kernel_ulong_t)&bd79112_chip_data },
 	{ }
 };
@@ -572,6 +613,6 @@ static struct spi_driver bd79112_driver = {
 module_spi_driver(bd79112_driver);
 
 MODULE_AUTHOR("Matti Vaittinen <mazziesaccount@gmail.com>");
-MODULE_DESCRIPTION("Driver for ROHM BD79112 ADC/GPIO");
+MODULE_DESCRIPTION("ADC/GPIO Driver for ROHM BD79112 et al.");
 MODULE_LICENSE("GPL");
 MODULE_IMPORT_NS("IIO_DRIVER");
