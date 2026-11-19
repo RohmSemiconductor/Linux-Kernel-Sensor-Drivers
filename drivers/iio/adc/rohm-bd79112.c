@@ -26,7 +26,15 @@
 
 #define BD79112_MAX_NUM_CHANNELS 32
 
+struct bd79112_data;
+
+struct bd7911x_chip_data {
+	const char * const *chan_names;
+	int (*init_disable_gpios)(struct bd79112_data *data);
+};
+
 struct bd79112_data {
+	const struct bd7911x_chip_data *cd;
 	struct spi_device *spi;
 	struct regmap *map;
 	struct device *dev;
@@ -398,6 +406,19 @@ static unsigned int bd79112_get_gpio_pins(const struct iio_chan_spec *cs, int nu
 	return gpio_channels;
 }
 
+static int bd79112_disable_gpios(struct bd79112_data *data)
+{
+	int ret;
+
+	for (unsigned int i = 0; i < BD79112_NUM_GPIO_EN_REGS; i++) {
+		ret = regmap_write(data->map, BD79112_FIRST_GPIO_EN_REG + i, 0);
+		if (ret)
+			return ret;
+	}
+
+	return 0;
+}
+
 /* ADC channels as named in the data-sheet */
 static const char * const bd79112_chan_names[] = {
 	"AGIO0A", "AGIO1A", "AGIO2A", "AGIO3A",		/* 0 - 3 */
@@ -408,6 +429,11 @@ static const char * const bd79112_chan_names[] = {
 	"AGIO4B", "AGIO5B", "AGIO6B", "AGIO7B",		/* 20 - 23 */
 	"AGIO8B", "AGIO9B", "AGIO10B", "AGIO11B",	/* 24 - 27 */
 	"AGIO12B", "AGIO13B", "AGIO14B", "AGIO15B",	/* 28 - 31 */
+};
+
+static const struct bd7911x_chip_data bd79112_chip_data = {
+	.chan_names = bd79112_chan_names,
+	.init_disable_gpios = bd79112_disable_gpios,
 };
 
 static int bd79112_probe(struct spi_device *spi)
@@ -425,6 +451,10 @@ static int bd79112_probe(struct spi_device *spi)
 		return -ENOMEM;
 
 	data = iio_priv(iio_dev);
+	data->cd = spi_get_device_match_data(spi);
+	if (!data->cd)
+		return -ENODATA;
+
 	data->spi = spi;
 	data->dev = dev;
 	data->map = devm_regmap_init(dev, NULL, data, &bd79112_regmap);
@@ -476,7 +506,7 @@ static int bd79112_probe(struct spi_device *spi)
 	iio_dev->channels = cs;
 
 	for (i = 0; i < iio_dev->num_channels; i++)
-		cs[i].datasheet_name = bd79112_chan_names[cs[i].channel];
+		cs[i].datasheet_name = data->cd->chan_names[cs[i].channel];
 
 	iio_dev->info = &bd79112_info;
 	iio_dev->name = "bd79112";
@@ -488,12 +518,9 @@ static int bd79112_probe(struct spi_device *spi)
 	 * without having to worry about some pins being initially used for
 	 * GPIO.
 	 */
-	for (i = 0; i < BD79112_NUM_GPIO_EN_REGS; i++) {
-		ret = regmap_write(data->map, BD79112_FIRST_GPIO_EN_REG + i, 0);
-		if (ret)
-			return dev_err_probe(dev, ret,
-					     "Failed to initialize channels\n");
-	}
+	ret = data->cd->init_disable_gpios(data);
+	if (ret)
+		return dev_err_probe(dev, ret, "Failed to initialize channels\n");
 
 	ret = devm_iio_device_register(data->dev, iio_dev);
 	if (ret)
@@ -523,13 +550,13 @@ register_gpios:
 }
 
 static const struct of_device_id bd79112_of_match[] = {
-	{ .compatible = "rohm,bd79112" },
+	{ .compatible = "rohm,bd79112", .data = &bd79112_chip_data },
 	{ }
 };
 MODULE_DEVICE_TABLE(of, bd79112_of_match);
 
 static const struct spi_device_id bd79112_id[] = {
-	{ .name = "bd79112" },
+	{ .name = "bd79112", .driver_data = (kernel_ulong_t)&bd79112_chip_data },
 	{ }
 };
 MODULE_DEVICE_TABLE(spi, bd79112_id);
