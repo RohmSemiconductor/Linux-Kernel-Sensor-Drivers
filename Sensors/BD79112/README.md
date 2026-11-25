@@ -4,6 +4,8 @@ markdownhint: If you're reading the raw-text, you can find the included stuff fr
 sensorname: BD79112
 compatible: rohm,bd79112
 devicetype: adc
+productpage: https://www.rohm.com/products/data-converter/a-d-converters/12bit-a-d/bd79112muf-c-product
+datasheet: https://fscdn.rohm.com/en/products/databook/datasheet/ic/data_converter/dac/bd79112muf-c-e.pdf
 spifreq: 20000000
 dtsupply: [vdd, iovdd]
 upstreamlink: https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/drivers/iio/adc/rohm-bd79112.c
@@ -11,7 +13,7 @@ upstreamed: v6.18-rc1
 issuelink: https://github.com/RohmSemiconductor/Linux-Kernel-Sensor-Drivers/issues?q=is%3Aissue+repo%3ALinux-Kernel-Sensor-Drivers+BD79112+in%3Atitle
 ---
 
-# ROHM BD79112 Analog to Digital Converter (ADC)
+# ROHM BD79112 Analog to Digital Converter (ADC) / GPIO controller
 
 The ROHM BD79112 ADC is a 32-channel, 12-bit ADC which is controlled over SPI. The ADC inputs can also be used as GPIO.
 
